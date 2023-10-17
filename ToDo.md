@@ -6,4 +6,4 @@
 ## "buzz.html", "register.html", "about.html" etc. 
 
 # so far we have:
-# buzz.html, club.html, account-settings.html, homepage.html, profile.html, createAccount.html, registerClub.html, resetPassword.html, contact.html, ourMission.html(placeholder)
+# buzz.html, club.html, account-settings.html, homepage.html, profile.html, createAccount.html, registerClub.html, resetPassword.html, contact.html, ourMission.html(subject to change)
