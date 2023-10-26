@@ -1,208 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      grid-template-rows: auto auto 1fr auto;
-      grid-template-areas: "header header" "menu menu" "main main" "footer footer";
-      font-family: Arial, sans-serif;
-    }
-
-    .header {
-      grid-area: header;
-      background-color: #0077B6;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-
-    .menu-button {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
-      background-color: #0077B6;
-      color: #fff;
-      font-size: 24px;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .menu {
-      position: fixed;
-      top: 0;
-      left: -240px;
-      width: 200px;
-      height: 100%;
-      background-color: #444;
-      color: #fff;
-      transition: left 0.3s;
-      z-index: 999;
-    }
-
-    .menu ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      margin-top: 150px;
-    }
-
-    .menu ul li {
-      margin: 30px;
-    }
-
-    .main {
-      grid-area: main;
-      background-color: #f5f5f5;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .main h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .account-settings-form {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    .account-settings-form label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    .account-settings-form input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .account-settings-form button {
-      background-color: #0077B6;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    .account-settings-form .profile-picture {
-    text-align: center;
-    margin-bottom: 20px;
-    }
-  
-    .account-settings-form .profile-picture img {
-        max-width: 150px;
-        max-height: 150px;
-        border: 1px solid #ccc;
-        border-radius: 50%;
-    }
-    
-    .footer {
-      grid-area: footer;
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      font-size: 14px;
-    }
-    .mission {
-        background-color: #f5f5f5;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    h2 {
-        color: #333;
-        font-size: 24px;
-    }
-    p {
-        font-size: 18px;
-        line-height: 1.5;
-        color: #555;
-    }
-    .mission header {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-    }
-    @media (min-width: 550px) {
-        .menu-button{
-            visibility: hidden;
-        }
-        .fullmenu {
-            grid-area: menu;
-            text-align: center;
-            color: #f5f5f5;
-            background-color: #f5f5f5;
-        }
-        .fullmenu > ul {
-            display: flex;
-            gap: .2rem;
-            list-style: none;
-            margin: 10px;
-            border:3px solid #333;
-            border-radius: 3px;
-            padding-left: 0px;
-        }
-        .fullmenu > ul > li {
-            flex:1;
-            padding: 10px;
-            font-size: medium;
-            background-color: #333;
-        }
-        ul > li:hover {
-          opacity: .8;
-          background-color: skyblue;
-          color: #333;
-          font-size: large;
-          font-weight: bold;
-        }
-        a {
-          display: block;
-          width:100%;
-        }
-        a:link {
-          text-decoration: none;
-          color: inherit;
-        }
-        a:visited {
-          text-decoration: none;
-          color: inherit
-        }
-    }        
-
-    @media (max-width: 549px) {
-        .fullmenu {
-            visibility: hidden;
-            height: 0px;
-        }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+    rel="stylesheet"
+    href="../css/styles.css"
+  />
 </head>
 
 <body>
@@ -236,15 +41,15 @@
         </p>
     </section>
   </main>
-  <footer class="footer">© 2023 BluGold Buzz</footer>
+  <footer class="footer">© 2023 BluGold Buzz <a href="./contact.html">Contact Us</a> </footer>
 
   <script>
     function toggleMenu() {
       var menu = document.getElementById("menu");
       if (menu.style.left === "0px" || menu.style.left === "") {
-        menu.style.left = "-240px"; /* Slide the menu off-screen */
+        menu.style.left = "-240px";
       } else {
-        menu.style.left = "0px"; /* Slide the menu into view */
+        menu.style.left = "0px";
       }
     }
   </script>
