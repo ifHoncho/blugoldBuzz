@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link
+        rel="stylesheet"
+        href="../css/v2styles.css"
+    />
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="inner-navbar">
+                <div class="logo">
+                    <a href="#">Blugold <span>Buzz</span></a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="./homepage.html" class="active">Home</a></li>
+                        <li><a href="./club.html">Club</a></li>
+                        <li><a href="./ourMission.html">About</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./accountSettings.html">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="content">
+                <div class="item-wrap">
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing 
+                        elit. Rem quisquam dolor eum? Beatae ex distinctio 
+                        quibusdam iure reprehenderit iusto aliquam, ipsam 
+                        dolorem, autem dolorum et unde totam! Beatae, 
+                        consequatur eligendi.
+                    </div> 
+                </div>
+                <div class="item-wrap">
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing 
+                        elit. Rem quisquam dolor eum? Beatae ex distinctio 
+                        quibusdam iure reprehenderit iusto aliquam, ipsam 
+                        dolorem, autem dolorum et unde totam! Beatae, 
+                        consequatur eligendi.
+                    </div> 
+                </div>
+                <div class="item-wrap">
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing 
+                        elit. Rem quisquam dolor eum? Beatae ex distinctio 
+                        quibusdam iure reprehenderit iusto aliquam, ipsam 
+                        dolorem, autem dolorum et unde totam! Beatae, 
+                        consequatur eligendi.
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var dropDown = document.querySelector(".dropdown");
+        var menu = document.querySelector(".menu");
+
+        dropDown.addEventListener("click",function(){
+            menu.classList.toggle("active");
+        })
+    </script>
+</body>
+</html>
