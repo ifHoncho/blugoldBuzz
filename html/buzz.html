@@ -5,121 +5,165 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bluegold Buzz - Buzz</title>
+    <link 
+        rel="icon"
+        href="../images/favicon.ico"
+    />
+    <link
+        rel="shortcut-icon"
+        href="../images/favicon.ico"
+        type="image/x-icon"
+    />
+    <link
+        rel="stylesheet"
+        href="../css/v2styles.css"
+    />
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    
     <style>
-        body {
+        .body {
+            margin-top: 60px;
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
-            color: #333;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
-
+        
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 30px 20px;
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 2200px;
+            margin: 0 auto;
+        }
+        
+        .main {
+            flex: 2;
+            padding-right: 20px;
+        }
+        
+        aside {
+            flex: 1;
+            padding-left: 20px;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .post-box {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        textarea {
+            flex: 3;
+            padding: 10px;
+        }
+        
+        button {
+            flex: 1;
+            margin-left: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .feed .post {
+            display: flex;
             align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .nav {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            margin-bottom: 40px;
+        
+        .feed .post img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
         }
-
-        .nav a {
-            color: #2b3e85;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .nav a:hover {
-            background-color: #edac1a;
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
             color: #fff;
         }
-
-        h1 {
-            color: #10255b;
-            font-size: 2.2em;
-            text-align: center;
-        }
-
-        .recent-posts {
-            margin-bottom: 20px;
-            width: 100%;
-        }
-
-        .recent-posts h2 {
-            color: #2b3e85;
-            font-size: 1.6em;
-            margin-bottom: 20px;
-        }
-
-        .recent-post {
-            border: 1px solid #e0e0e0;
-            padding: 12px;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            margin-bottom: 20px;
-            transition: background-color 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .recent-post h3 {
-            color: #2b3e85;
-            font-size: 1.3em;
-            margin-top: 0;
-        }
-
-        .cat-post img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 10px 0;
-        }
+        
     </style>
-</head>
-<body>
-    <div class="container">
-        <div class="nav">
-            <a href="#">View Buzz</a>
-            <a href="#">Login</a>
-            <a href="#">Create Account</a>
-            <a href="#">About</a>
-        </div>
-        <h1>Bluegold Buzz</h1>
-        <div class="recent-posts">
-            <h2>Recent Posts</h2>
-            
-            <!-- Leprechaun Hunting Club Post -->
-            <div class="recent-post">
-                <h3>🍀 Moonlit Leprechaun Hunt with the UW Leprechaun Hunting Club 🍀</h3>
-                <p>Legends whispered of leprechauns dancing under the UW moon, and now it's time to discover the truth! Join us on a whimsical night of tracking and trivia. But worry not, after a brief moment of gleeful catching, every leprechaun is lovingly released back into the wild. Gather your friends, wear your best green outfits, and immerse yourself in a night of enchantment. Special treasures await those with the keenest eyes!</p>
+    </head>
+    <body>
+    <div class="main">
+        <div class="navbar">
+            <div class="inner-navbar">
+                <div class="logo">
+                    <a href="./v2homepage.html">Blugold <span>Buzz</span></a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="./v2homepage.html" class="active">Home</a></li>
+                        <li><a href="./club.html">Club</a></li>
+                        <li><a href="./v2aboutUs.html">About</a></li>
+                        <li><a href="./v2contact.html">Contact</a></li>
+                        <li><a href="./v2accountSettings.html">Settings</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <!-- Public Skipping Advocates Post -->
-            <div class="recent-post">
-                <h3>🎉 Let's Skip The Norm with the Public Skipping Advocates 🎉</h3>
-                <p>Why walk when you can skip? Join us for a jubilant gathering and let's revolutionize the way we move. We're advocating for the joyous leap of skipping as not just a burst of fun, but also a swifter way to get around. Rediscover the childlike glee of skipping and help us make it the new norm for public transportation. Come, let's redefine the rhythm of our streets. Special demonstrations, fun challenges, and skip-themed goodies await!</p>
-            </div>
-
-            <!-- Missing Cat Post -->
-            <div class="recent-post cat-post">
-                <h3>🐱 Have you seen my cat!? 🐱</h3>
-                <p>We've lost our dear feline friend! If you've seen this adorable whiskered wanderer, please let us know. Any information is greatly appreciated!</p>
-                <img src="images/mycat.jpg" alt="Missing Cat" width="400" height="600">
+            <div class="dropdown">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-    </div>
-</body>
+        <script>
+            var dropDown = document.querySelector(".dropdown");
+            var menu = document.querySelector(".menu");
+    
+            dropDown.addEventListener("click",function(){
+                menu.classList.toggle("active");
+            })
+        </script>
+        <div class="container">
+            <main>
+                <section class="post-box">
+                    <textarea placeholder="What's happening?"></textarea>
+                    <button>Post</button>
+                </section>
+    
+                <section class="feed">
+                    <!-- Example post -->
+                    <div class="post">
+                        <img src="user-profile.jpg" alt="User Name">
+                        <div>
+                            <h3>User Name</h3>
+                            <p>This is an example post using flexbox!</p>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <img src="user-profile.jpg" alt="User Name">
+                        <div>
+                            <h3>User Name</h3>
+                            <p>This is an example post using flexbox!</p>
+                        </div>
+                    </div>
+                    <!-- More posts would be listed here -->
+                </section>
+            </main>
+    
+            <aside>
+                <section class="trending">
+                    <h2>Trending Topics</h2>
+                    <ul>
+                        <li>#Flexbox</li>
+                        <li>#WebDesign</li>
+                        <li>#HTMLandCSS</li>
+                        <!-- More trending topics -->
+                    </ul>
+                </section>
+            </aside>
+        </div>
+        <footer>
+            © 2023 Your Website. All rights reserved.
+        </footer>
+    </body>
 </html>
