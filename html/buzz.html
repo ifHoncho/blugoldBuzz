@@ -22,29 +22,30 @@
     
     <style>
         .body {
-            margin-top: 60px;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
         
-        .container {
-            margin-top: 100px;
+        .pcontainer {
             display: flex;
+            background-color: lightgray;
             justify-content: space-between;
             padding: 20px;
             max-width: 2200px;
             margin: 0 auto;
         }
         
-        .main {
-            flex: 2;
+        .pmain {
+            flex: 1;
             padding-right: 20px;
         }
         
-        aside {
+        .aside {
+            margin-left:5px;
             flex: 1;
+            width: 100px;
             padding-left: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -52,6 +53,7 @@
         
         .post-box {
             display: flex;
+            width:auto;
             justify-content: space-between;
             margin-bottom: 20px;
         }
@@ -62,10 +64,23 @@
         }
         
         button {
+            font-family: 'Ubuntu', sans-serif;
+            height:60px;
+            border:5px solid white;
+            border-radius: 20px;;
+            background-color: #4F709C;
             flex: 1;
             margin-left: 10px;
             padding: 10px;
             cursor: pointer;
+            font-size: 20px;
+            color:white;
+        }
+
+        button:hover{
+            opacity:0.8;
+            border-color: #213555;
+            transition: border-color 0.5s;
         }
         
         .feed .post {
@@ -74,7 +89,8 @@
             background-color: #fff;
             padding: 10px;
             margin-bottom: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 5px 5px #E5D283;
+            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
         }
         
         .feed .post img {
@@ -89,7 +105,13 @@
             padding: 20px 0;
             background-color: #333;
             color: #fff;
+            bottom:0;
         }
+
+        .navbar {
+            position:relative;
+        }
+
         
     </style>
     </head>
@@ -122,8 +144,8 @@
                 menu.classList.toggle("active");
             })
         </script>
-        <div class="container">
-            <main>
+        <div class="pcontainer">
+            <div class="pmain">
                 <section class="post-box">
                     <textarea placeholder="What's happening?"></textarea>
                     <button>Post</button>
@@ -149,7 +171,7 @@
                     </div>
                     <!-- More posts would be listed here -->
                 </section>
-            </main>
+            </div>
     
             <aside>
                 <section class="trending">
