@@ -9,4 +9,4 @@
 
 ### next we need to come up with a common design/color scheme for the pages. Also, come up with a uniform styling (grid, flexbox, etc) for how the general layout of each page will look. It should have a uniform header/footer, etc.
 
-refer to v2styles.css for header of other pages
+refer to styles.css for header of other pages
