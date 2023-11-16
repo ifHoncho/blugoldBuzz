@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,13 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
+
 <body>
     <!-- Start of navigation bar -->
     <div class="navbar">
         <div class="inner-navbar">
             <div class="logo">
-                <a href="#">Blugold <span>Buzz</span></a>
+                <a href="./homepage.html">Blugold <span>Buzz</span></a>
             </div>
             <div class="menu">
                 <ul>
@@ -24,9 +26,9 @@
                     <li><a href="./accountSettings.html">Settings</a></li>
                 </ul>
             </div>
-            <div class="dropdown">
-                <i class="fas fa-bars"></i>
-            </div>
+        </div>
+        <div class="dropdown">
+            <i class="fas fa-bars"></i>
         </div>
     </div>
     <!-- End of navigation bar -->
@@ -70,9 +72,9 @@
         var dropDown = document.querySelector(".dropdown");
         var menu = document.querySelector(".menu");
 
-        dropDown.addEventListener("click",function(){
+        dropDown.addEventListener("click", function () {
             menu.classList.toggle("active");
         })
     </script>
 </body>
-</html>
+

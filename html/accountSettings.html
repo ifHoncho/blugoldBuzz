@@ -1,92 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>account-settings</title>
-    <link 
-        rel="icon"
-        href="../images/favicon.ico"
-    />
-    <link
-        rel="shortcut-icon"
-        href="../images/favicon.ico"
-        type="image/x-icon"
-    />
-    <link
-        rel="stylesheet"
-        href="../css/styles.css"
-    />
+    <link rel="icon" href="../images/favicon.ico" />
+    <link rel="shortcut-icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <style>
         .main-container .content .item-wrap {
             width: 50%;
             padding: 10px;
         }
+
         .main-container .content .item-wrap .item {
             width: 100%;
             padding: 10px;
             text-align: center;
         }
+
         .main-container .content {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             width: 100%;
         }
-        @media (max-width: 728px){
+
+        @media (max-width: 728px) {
             .main-container .content .item-wrap {
-            width: 80%;
-            padding: 10px;
-        }
+                width: 80%;
+                padding: 10px;
+            }
         }
     </style>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
+
 <body>
-    <div class="main">
-        <div class="navbar">
-            <div class="inner-navbar">
-                <div class="logo">
-                    <a href="./homepage.html">Blugold <span>Buzz</span></a>
-                </div>
-                <div class="menu">
-                    <ul>
-                        <li><a href="./homepage.html" class="active">Home</a></li>
-                        <li><a href="./club.html">Club</a></li>
-                        <li><a href="./aboutUs.html">About</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                        <li><a href="./resetPassword.html">Reset Password</a></li>
-                    </ul>
-                </div>
+
+    <!-- Start of navigation bar -->
+    <div class="navbar">
+        <div class="inner-navbar">
+            <div class="logo">
+                <a href="./homepage.html">Blugold <span>Buzz</span></a>
             </div>
-            <div class="dropdown">
-                <i class="fas fa-bars"></i>
+            <div class="menu">
+                <ul>
+                    <li><a href="./homepage.html" class="active">Home</a></li>
+                    <li><a href="./club.html">Club</a></li>
+                    <li><a href="./aboutUs.html">About</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./resetPassword.html">Reset Password</a></li>
+                </ul>
             </div>
         </div>
-        <div class="main-container">
-            <div class="content">
-                <div class="item-wrap">
-                    <div class="item">
-                        <form class="account-settings-form">
-                            <h2>Account Settings</h2>
-                            <input type="text" id="username" name="username" placeholder="Current Username">
-                            <input type="text" id="new-username" name="new-username" placeholder="New Username">
-                            <input type="email" id="email" name="email" placeholder="Current Email">
-                            <input type="email" id="new-email" name="new-email" placeholder="New Email">
-                            <button type="submit">Save Changes</button>
-                          </form>
-                    </div> 
+        <div class="dropdown">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="content">
+            <div class="item-wrap">
+                <div class="item">
+                    <form class="account-settings-form">
+                        <h2>Account Settings</h2>
+                        <input type="text" id="username" name="username" placeholder="Current Username">
+                        <input type="text" id="new-username" name="new-username" placeholder="New Username">
+                        <input type="email" id="email" name="email" placeholder="Current Email">
+                        <input type="email" id="new-email" name="new-email" placeholder="New Email">
+                        <button type="submit">Save Changes</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
     <script>
         var dropDown = document.querySelector(".dropdown");
         var menu = document.querySelector(".menu");
 
-        dropDown.addEventListener("click",function(){
+        dropDown.addEventListener("click", function () {
             menu.classList.toggle("active");
         })
     </script>
 </body>
+
 </html>
