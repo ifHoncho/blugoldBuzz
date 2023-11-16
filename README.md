@@ -1,6 +1,5 @@
 # CS268 Project - Bluegold Buzz
 
-
 # To Do
 ## ~~pretty much everything ~~
 ## ~~we should start by getting the .html pages sorted out, a good place to start would be by creating blank .html pages for the pages we need to make~~
@@ -13,3 +12,7 @@
 ### refer to styles.css for header of other pages
 
 ### create additional css files for other pages so it is easier to organise and troubleshoot 
+
+## can can omit ourMission in leu of contactUs.
+
+### 1) homepage; 2) buzz; 3) club; 4) createAccount; 5) registerClub; 6) profile; 7) resetPassword; 8) accountSettings; 9) about; 10) contact
