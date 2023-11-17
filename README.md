@@ -1,7 +1,7 @@
 # CS268 Project - Bluegold Buzz
 
 # To Do
-## ~~pretty much everything ~~
+## ~~pretty much everything~~
 ## ~~we should start by getting the .html pages sorted out, a good place to start would be by creating blank .html pages for the pages we need to make~~
 ## start adding content to pages, come up with uniform design and color scheme
 
