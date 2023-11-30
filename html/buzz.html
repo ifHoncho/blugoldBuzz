@@ -21,20 +21,32 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     
     <style>
-        .body {
+        html{
+            height:100%;
+        }
+        body {
+            display:flex;
+            flex-direction: column;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            height:auto;
+            min-height: 100vh;
+            margin-bottom:50px;
         }
         
         .pcontainer {
             display: flex;
+            flex:1;
+            flex-direction: column;
             background-color: aliceblue;
             justify-content: space-between;
             padding: 20px;
             max-width: 2200px;
             margin: 0 auto;
+            height:2000px;
+
         }
         
         .pmain {
@@ -46,9 +58,16 @@
             margin-left:5px;
             flex: 1;
             width: 100px;
+            height: 100%;
             padding-left: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+        }
+
+        img{
+            width: 200px;
+            height: 80px;
         }
         
         .post-box {
@@ -103,9 +122,12 @@
         
         footer {
             text-align: center;
+            height:50px;
             padding: 20px 0;
             background-color: #333;
             color: #fff;
+            margin-top:auto;
+            position:absolute;
             bottom:0;
         }
 
@@ -159,29 +181,32 @@
                         <img src="../images/peter.jpg" alt="User Name">
                         <div>
                             <h3>Peter Griffin</h3>
-                            <p>Craig Meyer. Buzz test</p>
+                            <p>Buzz test</p>
                         </div>
                     </div>
 
                     <div class="post">
-                        <img src="../images/cleveland.png" alt="User Name">
+                        <img src="../images/defaultProfile.jpg" alt="User Name">
                         <div>
                             <h3>Cleveland Brown</h3>
                             <p>Hello</p>
                         </div>
                     </div>
                     <!-- More posts would be listed here -->
+                    
                 </section>
             </div>
     
             <aside>
+                <!--<img src="../images/river.jpg">-->
+                
                 <section class="trending">
                     <h2>Trending Topics</h2>
                     <ul>
                         <li>#Flexbox</li>
                         <li>#WebDesign</li>
                         <li>#HTMLandCSS</li>
-                        <!-- More trending topics -->
+
                     </ul>
                 </section>
             </aside>
@@ -189,5 +214,33 @@
         <footer>
             © 2023 Your Website. All rights reserved.
         </footer>
+        <script>
+            async function loadPosts(numberOfPosts) {
+                try {
+                    // Fetch the data from the API
+                    //const response = 
+                    //const posts = await response.json();
+
+                    // Generate HTML for each post
+                    let postsHTML = '';
+                    for (let i = 0; i < 5; i++){
+                        postsHTML += `
+                        <div class="post">
+                            <img src="../images/defaultProfile.jpg" alt="User Name">
+                            <div>
+                                <h3>Cleveland Brown</h3>
+                                <p>Hello</p>
+                            </div>
+                        </div>`;
+                    };
+
+                    // Insert the HTML into your webpage
+                    document.getElementsByClassName('feed').innerHTML = postsHTML;
+                } catch (error) {
+                    console.error('Error fetching posts:', error);
+                }
+            }
+            loadPosts(5);
+            </script>
     </body>
 </html>
