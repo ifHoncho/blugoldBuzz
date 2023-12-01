@@ -17,3 +17,4 @@
     - If user is logged in/not logged in -> display appropropriate navbar options
 2) append db initialization script to create required tables for users and posts
 3) use javascript to do stuff
+4) test working branch
