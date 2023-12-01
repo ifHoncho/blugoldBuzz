@@ -1,67 +1,91 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: center; /* Center align text by default */
-}
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Ubuntu&display=swap');
 
-.welcome-message {
-    padding: 40px 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.logo a {
+/* Base Styles */
+* {
+    font-family: 'Ubuntu', sans-serif;
+    list-style: none;
     text-decoration: none;
-    font-size: 32px;
-    color: #333;
-}
-
-.menu {
-    background-color: #333;
-    padding: 20px 0;
-    margin-top: -5px; /* Adjust according to your design */
-}
-
-.menu ul {
-    list-style-type: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    background: #f7f7f7;
+    color: #545454;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: #090f1b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 25px;
+}
+
+.navbar .inner-navbar {
     display: flex;
-    justify-content: center; /* Center the menu */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.menu li {
-    padding: 0 20px;
+.navbar .logo a {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: #fff;
 }
 
-.menu a {
-    text-decoration: none;
-    color: white;
+.navbar .logo a span {
+    color: #4F709C;
+}
+
+/* Menu Styles */
+.navbar .menu ul {
+    display: flex;
+}
+
+.navbar .menu ul li a {
     display: block;
-    font-size: 20px;
+    width: 120px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    letter-spacing: 2px;
+    transition: all 0.2s ease;
 }
 
-.menu a.active, .menu a:hover {
-    background-color: #4CAF50;
-    border-radius: 5px;
+.navbar .menu ul li:last-child a {
+    margin-right: 0;
 }
 
-/* Rest of the CSS rules */
-
-
-.welcome-message {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.navbar .menu ul li a:hover, .navbar .menu ul li a.active {
+    background: #4F709C;
 }
 
-.intro-section, .features-section {
-    padding: 20px;
+/* Main Container Styles */
+.pcontainer {
+    margin-top: 60px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
 }
 
+.pmain {
+    flex: 1;
+    padding-right: 20px;
+}
+
+/* Feature Section Styles */
 .features-container {
     display: flex;
     justify-content: space-around;
@@ -82,6 +106,7 @@ body {
     margin-bottom: 10px;
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px 0;
@@ -90,4 +115,15 @@ footer {
     position: absolute;
     width: 100%;
     bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+    }
+
+    .feature {
+        width: 100%;
+    }
 }
