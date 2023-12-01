@@ -87,7 +87,7 @@
                     <ul>
                         <li><a href="./homepage.html" class="active">Home</a></li>
                         <li><a href="./club.html">Club</a></li>
-                        <li><a href="./aboutUs.html">About</a></li>
+                        <li><a href="./about.html">About</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                         <li><a href="./accountSettings.html">Settings</a></li>
                     </ul>
@@ -97,15 +97,6 @@
                 <i class="fas fa-bars"></i>
             </div>
         </div>
-        <script>
-            var dropDown = document.querySelector(".dropdown");
-            var menu = document.querySelector(".menu");
-    
-            dropDown.addEventListener("click",function(){
-                menu.classList.toggle("active");
-            })
-        </script>
-
         <div class="container">
             <h2>Register as a Club</h2>
             <form action="#" method="POST">
@@ -120,5 +111,40 @@
                 <input type="submit" value="Login" class="btn">
             </form>
         </div>
+        <footer>
+            <div class="one">
+                <ul>
+                    <li><b>Legal</b></li>
+                    <li>Terms of Service</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="two">
+                <ul>
+                    <li><b>Useful Links</b></li>
+                    <li>this one</li>
+                    <li>this one</li>
+                    <li>this one</li>
+                </ul>
+            </div>
+            <div class="three">
+                <ul>
+                    <li><b>Support</b></li>
+                    <li>FAQ</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div class="four">
+                <p>© 2023 Blugold Buzz. All rights reserved.</p>
+            </div>
+        </footer>        
+        <script>
+            var dropDown = document.querySelector(".dropdown");
+            var menu = document.querySelector(".menu");
+    
+            dropDown.addEventListener("click",function(){
+                menu.classList.toggle("active");
+            })
+        </script>
     </body>
 </html>

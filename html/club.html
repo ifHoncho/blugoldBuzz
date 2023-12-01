@@ -41,19 +41,33 @@
             flex: 1;
             padding-right: 20px;
         }
-        
-        .aside {
-            margin-left:5px;
-            flex: 1;
-            width: 100px;
-            padding-left: 20px;
+        aside h2 {
+            padding-bottom: 10px;
+        }
+        aside h2:hover {
+            transform: scale(1.05);
+            border-bottom: 5px solid #4F709C;
+            cursor: pointer;  
+        }
+        aside ul > li {
             background-color: #fff;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            text-align: center;
+            font-family: inherit;
+            font-size: large;
+            padding: 15px;
+            border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+            aside ul > li:hover {
+                transform: scale(.95);
+                cursor: pointer;
+            }
         .post-box {
             display: flex;
-            width:auto;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
         }
         
@@ -64,22 +78,25 @@
         
         button {
             font-family: 'Ubuntu', sans-serif;
+            font-weight: bold;
+            letter-spacing: .1em;
+            font-size: 20px;
             height:60px;
             border:5px solid #4F709C;
             border-radius: 20px;;
             background-color: #4F709C;
-            flex: 1;
             margin-left: 10px;
             padding: 10px;
             cursor: pointer;
-            font-size: 20px;
             color:white;
+            text-transform: uppercase;
         }
 
         button:hover{
+            transform: scale(.95);
             opacity:0.8;
             border-color: #213555;
-            transition: border-color 0.5s;
+            transition: border-color 0.2s;
         }
         
         .feed .post {
@@ -89,7 +106,6 @@
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
-            box-shadow: 5px 5px #E5D283;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         
@@ -99,16 +115,6 @@
             border-radius: 50%;
             margin-right: 15px;
         }
-        
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: #fff;
-            position:absolute;
-            bottom:0;
-        }
-
         .navbar {
             position:relative;
         }
@@ -124,8 +130,8 @@
                 <div class="menu">
                     <ul>
                         <li><a href="./homepage.html" class="active">Home</a></li>
-                        <li><a href="./club.html">Club</a></li>
-                        <li><a href="./aboutUs.html">About</a></li>
+                        <li><a class="active-page" href="./club.html">Club</a></li>
+                        <li><a href="./about.html">About</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                         <li><a href="./accountSettings.html">Settings</a></li>
                     </ul>
@@ -135,22 +141,12 @@
                 <i class="fas fa-bars"></i>
             </div>
         </div>
-        <script>
-            var dropDown = document.querySelector(".dropdown");
-            var menu = document.querySelector(".menu");
-    
-            dropDown.addEventListener("click",function(){
-                menu.classList.toggle("active");
-            })
-        </script>
         <div class="pcontainer">
             <div class="pmain">
                 <section class="post-box">
                     <textarea placeholder="What's happening?"></textarea>
                     <button>Post</button>
                 </section>
-
-    
                 <section class="feed">
                     <!-- Example post -->
                     <div class="post">
@@ -219,7 +215,7 @@
     
             <aside>
                 <section class="trending">
-                    <h2>Trending Topics</h2>
+                    <h2>Buzzing Topics</h2>
                     <ul>
                         <li>#Flexbox</li>
                         <li>#WebDesign</li>
@@ -227,11 +223,42 @@
                         <!-- More trending topics -->
                     </ul>
                 </section>
-                <a href="#top">top of the page^</a>
             </aside>
         </div>
         <footer>
-            © 2023 Your Website. All rights reserved.
+            <div class="one">
+                <ul>
+                    <li><b>Legal</b></li>
+                    <li>Terms of Service</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="two">
+                <ul>
+                    <li><b>Useful Links</b></li>
+                    <li>this one</li>
+                    <li>this one</li>
+                    <li><a href="#top">Back to Top</a></li>
+                </ul>
+            </div>
+            <div class="three">
+                <ul>
+                    <li><b>Support</b></li>
+                    <li>FAQ</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div class="four">
+                <p>© 2023 Blugold Buzz. All rights reserved.</p>
+            </div>
         </footer>
+        <script>
+            var dropDown = document.querySelector(".dropdown");
+            var menu = document.querySelector(".menu");
+    
+            dropDown.addEventListener("click",function(){
+                menu.classList.toggle("active");
+            })
+        </script>
     </body>
 </html>
