@@ -1,5 +1,6 @@
 # CS268 Project - Bluegold Buzz
 
+## sitemap:
 ### 1) homepage; landing page, provided menu to buzz, club activity, login/register, & about us
 ### 2) buzz; view all posts, decending from newest to oldest
 ### 3) club; club activity (posts made by club accounts)
