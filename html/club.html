@@ -1,120 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link 
-        rel="icon"
-        href="../images/favicon.ico"
-    />
-    <link
-        rel="shortcut-icon"
-        href="../images/favicon.ico"
-        type="image/x-icon"
-    />
-    <link
-        rel="stylesheet"
-        href="../css/styles.css"
-    />
+    <title>Club Activity</title>
+    <link rel="icon" href="../images/favicon.ico" />
+    <link rel="shortcut-icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/club.css" />
+
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
-    <style>
-        .body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+</head>
 
-        }
-        
-        .pcontainer {
-            display: flex;
-            background-color: aliceblue;
-            justify-content: space-between;
-            padding: 20px;
-            max-width: 2200px;
-            margin: 0 auto;
-            height:100%;
-        }
-        
-        .pmain {
-            flex: 1;
-            padding-right: 20px;
-        }
-        
-        .aside {
-            margin-left:5px;
-            flex: 1;
-            width: 100px;
-            padding-left: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .post-box {
-            display: flex;
-            width:auto;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        
-        textarea {
-            flex: 3;
-            padding: 10px;
-        }
-        
-        button {
-            font-family: 'Ubuntu', sans-serif;
-            height:60px;
-            border:5px solid #4F709C;
-            border-radius: 20px;;
-            background-color: #4F709C;
-            flex: 1;
-            margin-left: 10px;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 20px;
-            color:white;
-        }
-
-        button:hover{
-            opacity:0.8;
-            border-color: #213555;
-            transition: border-color 0.5s;
-        }
-        
-        .feed .post {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 5px 5px #E5D283;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feed .post img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: #fff;
-            position:absolute;
-            bottom:0;
-        }
-
-        .navbar {
-            position:relative;
-        }
-    </style>
-    </head>
-    <body>
+<body>
     <div class="main">
         <div class="navbar">
             <div class="inner-navbar">
@@ -125,7 +25,7 @@
                     <ul>
                         <li><a href="./homepage.html" class="active">Home</a></li>
                         <li><a href="./club.html">Club</a></li>
-                        <li><a href="./aboutUs.html">About</a></li>
+                        <li><a href="./about.html">About</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                         <li><a href="./accountSettings.html">Settings</a></li>
                     </ul>
@@ -138,8 +38,8 @@
         <script>
             var dropDown = document.querySelector(".dropdown");
             var menu = document.querySelector(".menu");
-    
-            dropDown.addEventListener("click",function(){
+
+            dropDown.addEventListener("click", function () {
                 menu.classList.toggle("active");
             })
         </script>
@@ -150,7 +50,7 @@
                     <button>Post</button>
                 </section>
 
-    
+
                 <section class="feed">
                     <!-- Example post -->
                     <div class="post">
@@ -216,7 +116,7 @@
                     <!-- More posts would be listed here -->
                 </section>
             </div>
-    
+
             <aside>
                 <section class="trending">
                     <h2>Trending Topics</h2>
@@ -233,5 +133,6 @@
         <footer>
             © 2023 Your Website. All rights reserved.
         </footer>
-    </body>
+</body>
+
 </html>
