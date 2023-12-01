@@ -30,7 +30,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../images/uwec.jpg') no-repeat center center; 
+    background: url('../images/homepage.jpg') no-repeat center center; 
     background-size: cover;
     opacity: 0.55; /* Adjust for desired opacity */
     z-index: -1; /* Ensures the image stays behind the content */
