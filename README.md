@@ -18,5 +18,3 @@
 2) append db initialization script to create required tables for users and posts
 3) use javascript to do stuff
 4) ~~test working branch~~, compare & merge kyden's changes into working branch
-
-testing push
