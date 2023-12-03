@@ -2,8 +2,8 @@
 <?php
     session_start();
     $errorMessages = '';
-    include './config/dbconfig.php';
-    include './config/functions.php';
+    include '../config/dbconfig.php';
+    include '../config/functions.php';
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if(empty($_POST['username']) && empty($_POST['password']))
