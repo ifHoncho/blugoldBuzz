@@ -76,7 +76,7 @@
             flex: auto 0 auto;
         }
         form {
-            height: 100%;
+            height: 70vh;
         }
         form > p {
             text-align: center;
