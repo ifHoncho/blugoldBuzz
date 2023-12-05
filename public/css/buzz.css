@@ -96,15 +96,7 @@ button:hover {
 }
 
 /* Footer and Navbar Styles */
-footer {
-    text-align: center;
-    height: 50px;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
-    position: relative;
-    bottom: 0;
-}
+
 
 .navbar {
     position: relative;
