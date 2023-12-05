@@ -138,9 +138,12 @@
         }
         form > .post-button{
             grid-row: 2;
+            display: flex;
+            justify-items: center;
         }
         form > .post-button input[type="submit"]{
             padding: 10px 20px;
+            flex: 1;
             border: none;
             border-radius: 5px;
             margin-top: 10px;
