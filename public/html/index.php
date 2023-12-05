@@ -19,7 +19,7 @@
     <title>Welcome to BluGold Buzz</title>
     <link 
         rel="icon"
-        href="../assets/images/favicon.ico"
+        href="../../assets/images/favicon.ico"
     />
     <link
         rel="stylesheet"
