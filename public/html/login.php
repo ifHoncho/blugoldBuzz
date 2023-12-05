@@ -67,6 +67,14 @@
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex: 1 0 auto;
+        }
         form > p {
             text-align: center;
         }
@@ -105,7 +113,8 @@
         footer {
             position: absolute;
             bottom: 0;
-            width: 100%
+            width: 100%;
+            flex-shrink: 0;
         }
         @media (min-width: 728px) {
             

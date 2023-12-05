@@ -43,7 +43,6 @@
             padding-top: 50px;
             flex-shrink: 0;
         }
-        /* Main Container Styles */
         .main-container {
             display: grid;
             grid-template-rows: auto 1fr;
@@ -133,7 +132,7 @@
             grid-template-columns: auto;
             grid-auto-rows: auto;
             grid-auto-columns: auto;
-            height: 250px;
+            max-height: 300px;
             width: 100%;
             padding: 10px;
             gap: 25px;
@@ -181,6 +180,7 @@
             font-size: large;
             font-weight: bold;
             text-align: center;
+            padding: 10px 20px;
         }
         form > .post-image label:hover {
             background-color: #3F609C;
