@@ -1,10 +1,9 @@
 <?php
     $errors = array();
     session_start();
-    include '../config/dbconfig.php';
 
     // Create connection
-    $conn = new mysqli($servername, 'root', '', $dbname);
+    $conn = new mysqli('localhost', 'root', '', 'blugoldBuzz');
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -201,6 +200,11 @@
                                 <option value="Student">Student</option>
                             </select>
                             <input type="submit" value="Register" class="btn">
+                            <?php
+                                foreach ($errors as $error) {
+                                    echo '<div style="color:red">' . $error . '</div>';
+                                }
+                            ?>
                         </form>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 
 <?php
+//IF USER LOGS IN, DISPLAY SUCCESS NOTIFICATION
     session_start();
     if (isset($_SESSION['login_success']) && $_SESSION['login_success']) {
         echo '<header id="success-header" class="hidden">Login successful!</header>';
@@ -112,27 +113,33 @@
             grid-row: 2 / 2;
             grid-column: 1 / 3;
             background: #fff;
-            height: 200px;
+            min-height: 200px;
+            height: auto;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(2,1fr);
             margin-left: 20px;
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr;
         }
-        .post > .post-input {
-            grid-column: 1 / 1;
+        .post form {
             grid-row: 1 / 1;
-            margin: 10px;
-        }
-        .post > .post-button {
             grid-column: 1 / 1;
-            grid-row: 2 / 2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            height: 250px;
+            width: 100%;
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: repeat(5,1fr);
         }
-        .post-button > button {
+        form > .post-input{
+            grid-column: 1 / 6;
+            grid-row: 1 / 2;
+        }
+        form > .post-button{
+            grid-column: 3 / 4;
+            grid-row: 4 / 6;
+        }
+        form > .post-button input[type="submit"]{
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -145,12 +152,36 @@
             letter-spacing: .2em;
             background-color: #4F709C;
             color: #fff;
-            width: 50%;
+            width: 100px;
             text-align: center;
         }
-        .post-button > button:hover {
+        form > .post-button:hover {
             transition: .2s ease-out;
             scale: 1.1 1.2;
+        }
+        form > .post-image{
+            text-align: center;
+            grid-row: 2 / 5;
+            grid-column: 2 / 5;
+        }
+        form > .post-image input[type="file"] {
+            display: none;
+        }
+        form > .post-image label {
+            padding: 10px 20px;
+            background-color: #4F709C;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: large;
+            font-weight: bold;
+            text-align: center;
+            transition: .2s ease-out;
+            position: relative;
+            top: 20px;
+        }
+        form > .post-image label:hover {
+            background-color: #3F609C;
         }
         .trending {
             grid-row: 2 / 2;
@@ -237,34 +268,11 @@
         .main-container.logged-out .post {
             display: none;
         }
-
-    .dropdown {
-        z-index: 4;
-    }
     .recent {
         padding-top: 20px;
     }
-    .post-placeholder {
-        grid-row: 2 / 2;
-        grid-column: 1 / 3;
-        height: 200px;
-        margin-left: 20px;
-        display: none;
-    }
     .item-wrap, .item {
         height: auto;
-    }
-    .fixed-button {
-        display: none;
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        background-color: #4F709C;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        z-index: 1000;
     }        
     @media (max-width: 400px) {
         .main-container .post,
@@ -284,9 +292,6 @@
         .item-wrap, .item {
             margin-left: 20px;
             margin-right: 20px;
-        }
-        .fixed-button {
-        display: block;
         }
     }
     
@@ -370,31 +375,29 @@
                 </div>
             </div>
             <?php
-            // Check if user is logged in
+            // IF USER IS LOGGED IN, POSTING IS AVAILABLE
             if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in']) {
                 echo '
-                <div class="post">
+            <div class="post">
+                <form action="post.php" method="post" enctype="multipart/form-data">
                     <div class="post-input">
-                        <textarea placeholder="What\'s happening?"></textarea>
+                        <textarea id="content" name="content" placeholder="What\'s happening?"></textarea><br>
+                    </div>
+                    <div class="post-image">
+                        <input type="file" id="photo" name="photo" onchange="previewFile()">
+                        <label for="photo">Upload Photo</label>
+                        <img id="preview" src="" height="200" alt="Image preview...">
                     </div>
                     <div class="post-button">
-                        <button>Post</button>
+                        <input type="submit" value="Post">
                     </div>
-                </div> 
-                <button id="small-post-button" class="fixed-button">Post</button>
-                <div id="input-box" style="display: none;">
-                    <input type="text" placeholder="Enter post here...">
-                </div>
+                </form>
+            </div>
                 ';
             } else {
-                echo '<div class="post-placeholder"></div>';
+                echo '<div class="post"></div>';
             }
             ?>
-            <button id="small-post-button" class="fixed-button">Post</button>
-                <div id="input-box" style="display: none;">
-                    <input type="text" placeholder="Enter post here...">
-                </div>
-            
             <div class="trending">
                 <h4>Trending Now</h4>
                 <div class="trending-content1">
@@ -466,35 +469,51 @@
             <p>© 2023 Blugold Buzz. All rights reserved.</p>
         </div>
     </footer>
-    <script>
-        var dropDown = document.querySelector(".dropdown");
-        var menu = document.querySelector(".menu");
+<script>
+    var dropDown = document.querySelector(".dropdown");
+    var menu = document.querySelector(".menu");
 
-        dropDown.addEventListener("click",function(){
-            menu.classList.toggle("active");
-        })
-            window.onload = function() {
-            var header = document.getElementById('success-header');
-            if (header && header.textContent.trim() !== '') {
-                header.classList.remove('hidden');
+    dropDown.addEventListener("click",function(){
+        menu.classList.toggle("active");
+    })
+        window.onload = function() {
+        var header = document.getElementById('success-header');
+        if (header && header.textContent.trim() !== '') {
+            header.classList.remove('hidden');
 
-                // After 2 seconds, add the 'hidden' class back to the header
-                setTimeout(function() {
-                    header.classList.add('hidden');
-                }, 2000);
-            }   
+            // After 2 seconds, add the 'hidden' class back to the header
+            setTimeout(function() {
+                header.classList.add('hidden');
+            }, 2000);
+        }   
+    }
+    document.getElementById('small-post-button').addEventListener('click', function() {
+        var inputBox = document.getElementById('input-box');
+        if (inputBox.style.display === 'none') {
+            inputBox.style.display = 'block';
+        } else {
+            inputBox.style.display = 'none';
         }
-        document.getElementById('small-post-button').addEventListener('click', function() {
-            var inputBox = document.getElementById('input-box');
-            if (inputBox.style.display === 'none') {
-                inputBox.style.display = 'block';
-            } else {
-                inputBox.style.display = 'none';
-            }
-        });
-    </script>
+    });
+
+    function previewFile() {
+    const preview = document.querySelector('#preview');
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        // convert image file to base64 string
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+</script>
 </body>
 </html>
+
 <?php
 if (isset($_SESSION['message']) && $_SESSION['message'] === 'Logout successful!') {
     unset($_SESSION['message']);

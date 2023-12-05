@@ -1,9 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root"; // default XAMPP user
-$password = ""; // default XAMPP password is empty
-$dbname = "blugoldBuzz";
-
+$username = "root";
+$password = "";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
@@ -14,24 +12,42 @@ if ($conn->connect_error) {
 }
 
 // Create database
-$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
-if ($conn->query($sql) === FALSE) {
+$sql = "CREATE DATABASE blugoldBuzz";
+if ($conn->query($sql) === TRUE) {
+    echo "Database created successfully";
+} else {
     echo "Error creating database: " . $conn->error;
 }
 
-// Select database
-mysqli_select_db($conn, $dbname);
+// Select the database
+$conn->select_db("blugoldBuzz");
 
-// SQL to create table
-$sql = "CREATE TABLE IF NOT EXISTS userinfo (
-    username VARCHAR(255) PRIMARY KEY,
-    password VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE
+// sql to create table
+$sql = "CREATE TABLE userinfo (
+username VARCHAR(30) NOT NULL PRIMARY KEY,
+password VARCHAR(255) NOT NULL,
+email VARCHAR(50),
+userType VARCHAR(50)
 )";
 
-if ($conn->query($sql) === FALSE) {
+if ($conn->query($sql) === TRUE) {
+    echo "Table userinfo created successfully";
+} else {
     echo "Error creating table: " . $conn->error;
 }
+$sql = "CREATE TABLE post (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(30) NOT NULL,
+    content TEXT,
+    photo VARCHAR(255),
+    post_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )";
+    
+    if ($conn->query($sql) === TRUE) {
+        echo "Table post created successfully";
+    } else {
+        echo "Error creating table: " . $conn->error;
+    }
 
 $conn->close();
 ?>
