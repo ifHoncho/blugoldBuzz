@@ -74,7 +74,7 @@
         }
         .main-content {
             flex: auto 0 auto;
-            min-height: 70vh;
+            min-height: 100vh;
         }
         form > p {
             text-align: center;
