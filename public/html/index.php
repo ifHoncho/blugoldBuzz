@@ -28,7 +28,7 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <style>
         .nav-bar {
-            z-index:2;
+            z-index:4;
             position: relative;
         }
         body {
@@ -113,7 +113,7 @@
             grid-row: 2 / 2;
             grid-column: 1 / 3;
             background: #fff;
-            min-height: 200px;
+            max-height: 300px;
             height: auto;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -179,9 +179,12 @@
             transition: .2s ease-out;
             position: relative;
             top: 20px;
+            z-index: 1;
         }
         form > .post-image label:hover {
             background-color: #3F609C;
+            transform: scale(1.05);
+            transition: .2s ease-in-out;
         }
         .trending {
             grid-row: 2 / 2;
