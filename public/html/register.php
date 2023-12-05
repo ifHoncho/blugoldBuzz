@@ -96,7 +96,7 @@
     />
     <link 
         rel="stylesheet" 
-        href="./css/styles.css"
+        href="../css/styles.css"
     />
     <!--<link rel="stylesheet" href="../css/contact.css" /> --->
 
