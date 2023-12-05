@@ -1,7 +1,3 @@
-<head>
-    <title>Logout</title>
-</head>
-
 <?php
 session_start();
 
