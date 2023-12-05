@@ -23,7 +23,7 @@
     />
     <link
         rel="stylesheet"
-        href="./css/styles.css"
+        href="../css/styles.css"
     />
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <style>
