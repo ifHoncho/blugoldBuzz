@@ -31,8 +31,8 @@ function loadPosts() {
     <title>Blugold Buzz - Buzz</title>
     <link rel="icon" href="../../assets/images/favicon.ico" />
     <link rel="shortcut-icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../public/css/styles.css" />
-    <link rel="stylesheet" href="../public/css/buzz.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/buzz.css" />
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
 </head>
@@ -46,8 +46,8 @@ function loadPosts() {
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><a href="./index.php" class="active">Home</a></li>
-                        <li><a href="./buzz.php">Buzz</a></li>
+                        <li><a href="../css/index.php" class="active">Home</a></li>
+                        <li><a href="../css/buzz.php">Buzz</a></li>
                         <li><a href="./club.php">Club</a></li>
                         <li><a href="./about.html">About</a></li>
                         <li><a href="./accountSettings.html">Account</a></li>
