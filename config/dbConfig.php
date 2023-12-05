@@ -23,11 +23,13 @@ if ($conn->query($sql) === TRUE) {
 $conn->select_db("blugoldBuzz");
 
 // sql to create table
+//isClub defines if user is a club or not which defaluts to 0 
+//for a student account
 $sql = "CREATE TABLE userinfo (
 username VARCHAR(30) NOT NULL PRIMARY KEY,
 password VARCHAR(255) NOT NULL,
 email VARCHAR(50),
-userType VARCHAR(50)
+isClub BOOL DEFAULT 0
 )";
 
 if ($conn->query($sql) === TRUE) {
@@ -42,12 +44,12 @@ $sql = "CREATE TABLE post (
     photo VARCHAR(255),
     post_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Table post created successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
+    
+    if ($conn->query($sql) === TRUE) {
+        echo "Table post created successfully";
+    } else {
+        echo "Error creating table: " . $conn->error;
+    }
 
 $conn->close();
 ?>
