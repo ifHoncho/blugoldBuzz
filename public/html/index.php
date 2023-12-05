@@ -113,7 +113,7 @@
             grid-row: 2 / 2;
             grid-column: 1 / 3;
             background: #fff;
-            max-height: 300px;
+            max-height: 400px;
             height: auto;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -131,7 +131,7 @@
             height: 250px;
             width: 100%;
             padding: 10px;
-            gap: 15px;
+            gap: 25px;
         }
         form > .post-input{
             grid-column: 1 / 6;
