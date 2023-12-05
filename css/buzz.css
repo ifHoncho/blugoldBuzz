@@ -1,0 +1,119 @@
+/* Buzz Page Styles - Mirroring Consistent Site Style */
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.pcontainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: #fff;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 800px; /* Adjusted width */
+    margin: 20px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.pmain {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.aside {
+    margin-left: 5px;
+    flex: 1;
+    padding-left: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+}
+
+/* Post Box Styles */
+.post-box {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+textarea {
+    flex: 3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    font-family: 'Ubuntu', sans-serif;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    background-color: #4F709C;
+    flex: 1;
+    margin-left: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+    background-color: #213555;
+    transition: background-color 0.5s;
+}
+
+/* Feed Post Styles */
+.feed .post {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feed .post img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Footer and Navbar Styles */
+footer {
+    text-align: center;
+    height: 50px;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+}
+
+.navbar {
+    position: relative;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 728px) {
+    .pcontainer {
+        width: 90%;
+        max-width: 400px;
+    }
+}
