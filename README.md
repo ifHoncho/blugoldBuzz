@@ -13,5 +13,7 @@
 10) contact; offers a way to get in touch with the developers
 
 ### To Do
+- Fix menu links
+- fix css & image links (if any have been missed)
 - change accountSettings.html -> accountSettings.php
 - change resetPassword -> accountSettings.php
