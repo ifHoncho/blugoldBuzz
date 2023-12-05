@@ -124,7 +124,7 @@
         }
         .post form {
             display: grid;
-            grid-template-rows: auto;
+            grid-template-rows: repeat(3,auto);
             grid-template-columns: auto;
             grid-auto-rows: auto;
             grid-auto-columns: auto;
@@ -134,12 +134,10 @@
             gap: 25px;
         }
         form > .post-input{
-            grid-column: 1 / 6;
-            grid-row: 1 / 2;
+            grid-row: 1;
         }
         form > .post-button{
-            grid-column: 3 / 4;
-            grid-row: 4 / 6;
+            grid-row: 2;
         }
         form > .post-button input[type="submit"]{
             padding: 10px 20px;
@@ -163,8 +161,7 @@
         }
         form > .post-image{
             text-align: center;
-            grid-row: 2 / 5;
-            grid-column: 2 / 5;
+            grid-row: 3;
         }
         form > .post-image input[type="file"] {
             display: none;
