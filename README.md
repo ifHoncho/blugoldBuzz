@@ -13,7 +13,5 @@
 10) contact; offers a way to get in touch with the developers
 
 ### To Do
-1) implement user sessions
-    - If user is logged in/not logged in -> display appropropriate navbar options
-2) append db initialization script to create required tables for users and posts
-3) use javascript to do stuff
+- change accountSettings.html -> accountSettings.php
+- change resetPassword -> accountSettings.php
