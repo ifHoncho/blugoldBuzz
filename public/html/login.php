@@ -112,7 +112,6 @@
         }
         footer {
             width: 100%;
-            flex-shrink: 0;
         }
         @media (min-width: 728px) {
             
