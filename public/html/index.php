@@ -119,18 +119,18 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             margin-left: 20px;
             display: grid;
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-columns: auto;
         }
         .post form {
-            grid-row: 1 / 1;
-            grid-column: 1 / 1;
             display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: auto;
+            grid-auto-rows: auto;
+            grid-auto-columns: auto;
             height: 250px;
             width: 100%;
             padding: 10px;
-            grid-template-columns: repeat(5,1fr);
-            grid-template-rows: repeat(5,1fr);
         }
         form > .post-input{
             grid-column: 1 / 6;
