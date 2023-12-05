@@ -49,7 +49,6 @@ function loadPosts() {
                         <li><a href="./index.php" class="active">Home</a></li>
                         <li><a href="./buzz.php">Buzz</a></li>
                         <li><a href="./club.php">Club</a></li>
-                        <li><a href="./about.html">About</a></li>
                         <li><a href="./accountSettings.html">Account</a></li>
                     </ul>
                 </div>
