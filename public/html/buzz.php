@@ -1,3 +1,26 @@
+<?php
+
+
+function loadPosts() {
+    $posts = [
+        // Example posts data
+        ["title" => "First Post", "content" => "This is a dynamic post."],
+        ["title" => "Second Post", "content" => "This is a dynamic post."],
+        // Add more posts here
+    ];
+
+    foreach ($posts as $post) {
+        echo "<div class='post'>";
+        echo "<img src='../../assets/images/cleveland.png' alt='User Name'>";
+        echo "<div><h3>" . htmlspecialchars($post['title']) . "</h3>";
+        echo "<p>" . htmlspecialchars($post['content']) . "</p></div>";
+        echo "</div>";
+    }
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,13 +42,13 @@
         <div class="navbar">
             <div class="inner-navbar">
                 <div class="logo">
-                    <a href="./homepage.html">Blugold <span>Buzz</span></a>
+                    <a href="./index.php">Blugold <span>Buzz</span></a>
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><a href="./index.html" class="active">Home</a></li>
-                        <li><a href="./buzz.html">Buzz</a></li>
-                        <li><a href="./club.html">Club</a></li>
+                        <li><a href="./index.php" class="active">Home</a></li>
+                        <li><a href="./buzz.php">Buzz</a></li>
+                        <li><a href="./club.php">Club</a></li>
                         <li><a href="./about.html">About</a></li>
                         <li><a href="./accountSettings.html">Account</a></li>
                     </ul>
@@ -51,7 +74,9 @@
                 </section>
 
 
-                <section class="feed">
+                <div class="feed">
+                    <?php 
+                    loadPosts(); ?>
                     <!-- Example post -->
                     <div class="post">
                         <img src="../../assets/images/peter.jpg" alt="User Name">
@@ -70,27 +95,14 @@
                     </div>
                     <!-- More posts would be listed here -->
 
-                </section>
+                </div>
             </div>
-
-            <aside>
-                <!--<img src="../../assets/images/river.jpg">-->
-
-                <section class="trending">
-                    <h2>Trending Topics</h2>
-                    <ul>
-                        <li>#Flexbox</li>
-                        <li>#WebDesign</li>
-                        <li>#HTMLandCSS</li>
-
-                    </ul>
-                </section>
-            </aside>
         </div>
         <footer>
             © 2023 Your Website. All rights reserved.
         </footer>
         <script>
+            /*
             async function loadPosts(numberOfPosts) {
                 try {
                     // Fetch the data from the API
@@ -99,7 +111,7 @@
 
                     // Generate HTML for each post
                     let postsHTML = '';
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < numberOfPosts; i++) {
                         postsHTML += `
                         <div class="post">
                             <img src="../../assets/images/defaultProfile.jpg" alt="User Name">
@@ -111,12 +123,13 @@
                     };
 
                     // Insert the HTML into your webpage
-                    document.getElementsByClassName('feed').innerHTML = postsHTML;
+                    document.getElementsByClassName('feed').innerHTML[0] += postsHTML;
                 } catch (error) {
                     console.error('Error fetching posts:', error);
                 }
             }
-            loadPosts(5);
+            //loadPosts(5);
+            */
         </script>
 </body>
 
