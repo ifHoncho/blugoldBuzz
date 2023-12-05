@@ -339,7 +339,7 @@
                 <div class="menu">
                     <ul>
                         <li><a class="active-page" href="./index.php" class="active">Home</a></li>
-                        <li><a href="./club.html">Club</a></li>
+                        <li><a href="./club.php">Club</a></li>
                         
                         <?php
                             if ($class === 'logged-in') {
