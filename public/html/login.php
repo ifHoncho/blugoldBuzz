@@ -103,6 +103,7 @@
             transition: .2s ease-in-out;
         }
         footer {
+            display: block;
             position: absolute;
             bottom: 0;
             width: 100%
@@ -133,7 +134,7 @@
                 <div class="menu">
                     <ul>
                         <li><a href="./index.php" class="active">Home</a></li>
-                        <li><a href="./club.html">Club</a></li>
+                        <li><a href="./club.php">Club</a></li>
                         <li><a class="active-page"  href="./login.php">Login</a> </li>
                         <li><a href="./accountSettings.html">Settings</a></li>
                     </ul>
