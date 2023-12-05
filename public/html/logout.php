@@ -1,4 +1,3 @@
-<html>
 <head>
     <title>Logout</title>
 </head>
@@ -18,4 +17,3 @@ $_SESSION['message'] = 'Logout successful!';
 header("Location: index.php");
 exit;
 ?>
-</html>
