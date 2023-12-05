@@ -23,13 +23,11 @@ if ($conn->query($sql) === TRUE) {
 $conn->select_db("blugoldBuzz");
 
 // sql to create table
-//isClub defines if user is a club or not which defaluts to 0 
-//for a student account
 $sql = "CREATE TABLE userinfo (
 username VARCHAR(30) NOT NULL PRIMARY KEY,
 password VARCHAR(255) NOT NULL,
 email VARCHAR(50),
-isClub BOOL DEFAULT 0
+userType VARCHAR(50)
 )";
 
 if ($conn->query($sql) === TRUE) {
