@@ -188,9 +188,6 @@
             transition: .2s ease-in-out;
             cursor: pointer;
         }
-        label[for="photo"] {
-            margin-bottom: 20px; 
-        }
         .trending {
             grid-row: 2 / 2;
             grid-column: 6 / 8;

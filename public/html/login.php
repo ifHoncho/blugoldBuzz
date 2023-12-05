@@ -111,8 +111,6 @@
             transition: .2s ease-in-out;
         }
         footer {
-            position: absolute;
-            bottom: 0;
             width: 100%;
             flex-shrink: 0;
         }
