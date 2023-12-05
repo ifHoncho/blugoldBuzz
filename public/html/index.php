@@ -185,6 +185,9 @@
             transform: scale(1.05);
             transition: .2s ease-in-out;
         }
+        label[for="photo"] {
+            margin-bottom: 20px; 
+        }
         .trending {
             grid-row: 2 / 2;
             grid-column: 6 / 8;
