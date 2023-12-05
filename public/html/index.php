@@ -131,6 +131,7 @@
             height: 250px;
             width: 100%;
             padding: 10px;
+            gap: 15px;
         }
         form > .post-input{
             grid-column: 1 / 6;
