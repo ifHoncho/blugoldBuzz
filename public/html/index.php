@@ -62,8 +62,8 @@
             font-size: x-large;
             letter-spacing: .2em;
             border-bottom: 4px solid; 
-            position: relative; /* New */
-            z-index: -1; /* New */
+            position: relative;
+            z-index: -1; 
         }
         header.hidden {
             height: 0px;
@@ -77,8 +77,8 @@
                 height: 100%;
                 background: url('../../assets/images/homepage.jpg') no-repeat center center; 
                 background-size: cover;
-                opacity: 0.5; /* Adjust this to change the opacity */
-                z-index: -2; /* New */
+                opacity: 0.5; 
+                z-index: -2; 
             }
         .main-container .content {
             grid-row: 2 / 2;
@@ -128,6 +128,7 @@
             display: grid;
             height: 250px;
             width: 100%;
+            padding: 10px;
             grid-template-columns: repeat(5,1fr);
             grid-template-rows: repeat(5,1fr);
         }
@@ -177,9 +178,6 @@
             font-weight: bold;
             text-align: center;
             transition: .2s ease-out;
-            position: relative;
-            top: 20px;
-            z-index: 1;
         }
         form > .post-image label:hover {
             background-color: #3F609C;
