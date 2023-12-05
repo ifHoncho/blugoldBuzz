@@ -35,9 +35,13 @@
             margin: 0;
             padding: 0;
             background: aliceblue;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         footer {
             padding-top: 50px;
+            flex-shrink: 0;
         }
         /* Main Container Styles */
         .main-container {
@@ -51,6 +55,7 @@
             padding-right:0;
             padding-top:0;
             min-height: 700px;
+            flex: 1 0 auto;
         }
         .heading {
             grid-column: 1 / 8;
