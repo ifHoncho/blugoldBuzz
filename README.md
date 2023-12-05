@@ -13,8 +13,11 @@
 10) contact; offers a way to get in touch with the developers
 
 ### To Do
+- Integrate new homepage (fix links, header, footer)
 - Fix menu links
 - fix footers
 - fix css & image links (if any have been missed)
 - change accountSettings.html -> accountSettings.php
+- profile.html
 - change resetPassword -> accountSettings.php
+- presentation
