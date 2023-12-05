@@ -170,20 +170,18 @@
             display: none;
         }
         form > .post-image label {
-            padding: 10px 20px;
             background-color: #4F709C;
             color: #fff;
-            cursor: pointer;
             border-radius: 5px;
             font-size: large;
             font-weight: bold;
             text-align: center;
-            transition: .2s ease-out;
         }
         form > .post-image label:hover {
             background-color: #3F609C;
             transform: scale(1.05);
             transition: .2s ease-in-out;
+            cursor: pointer;
         }
         label[for="photo"] {
             margin-bottom: 20px; 
