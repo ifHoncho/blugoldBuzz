@@ -14,6 +14,7 @@
 
 ### To Do
 - Fix menu links
+- fix footers
 - fix css & image links (if any have been missed)
 - change accountSettings.html -> accountSettings.php
 - change resetPassword -> accountSettings.php
