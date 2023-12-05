@@ -19,5 +19,5 @@
 - fix css & image links (if any have been missed)
 - change accountSettings.html -> accountSettings.php
 - profile.html
-- change resetPassword -> accountSettings.php
+- change resetPassword -> resetPassword.php
 - presentation
