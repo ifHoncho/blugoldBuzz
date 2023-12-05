@@ -103,7 +103,6 @@
             transition: .2s ease-in-out;
         }
         footer {
-            display: block;
             position: absolute;
             bottom: 0;
             width: 100%
