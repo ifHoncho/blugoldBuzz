@@ -99,38 +99,40 @@ function loadPosts() {
             </div>
         </div>
         <footer>
-            © 2023 Your Website. All rights reserved.
-        </footer>
-        <script>
-            /*
-            async function loadPosts(numberOfPosts) {
-                try {
-                    // Fetch the data from the API
-                    //const response = 
-                    //const posts = await response.json();
+        <div class="one">
+            <ul>
+                <li><b>Legal</b></li>
+                <li>Terms of Service</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </div>
+        <div class="two">
+            <ul>
+                <li><b>Useful Links</b></li>
+                <li>this one</li>
+                <li>this one</li>
+                <li>this one</li>
+            </ul>
+        </div>
+        <div class="three">
+            <ul>
+                <li><b>Support</b></li>
+                <li>FAQ</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="four">
+            <p>© 2023 Blugold Buzz. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        var dropDown = document.querySelector(".dropdown");
+        var menu = document.querySelector(".menu");
 
-                    // Generate HTML for each post
-                    let postsHTML = '';
-                    for (let i = 0; i < numberOfPosts; i++) {
-                        postsHTML += `
-                        <div class="post">
-                            <img src="../../assets/images/defaultProfile.jpg" alt="User Name">
-                            <div>
-                                <h3>Cleveland Brown</h3>
-                                <p>Hello</p>
-                            </div>
-                        </div>`;
-                    };
-
-                    // Insert the HTML into your webpage
-                    document.getElementsByClassName('feed').innerHTML[0] += postsHTML;
-                } catch (error) {
-                    console.error('Error fetching posts:', error);
-                }
-            }
-            //loadPosts(5);
-            */
-        </script>
+        dropDown.addEventListener("click", function () {
+            menu.classList.toggle("active");
+        })
+    </script>
 </body>
 
 </html>
