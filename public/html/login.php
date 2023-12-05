@@ -73,7 +73,7 @@
             min-height: 100vh;
         }
         .main-content {
-            flex: 1 0 auto;
+            flex: auto 0 auto;
         }
         form > p {
             text-align: center;
