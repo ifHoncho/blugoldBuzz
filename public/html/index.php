@@ -387,7 +387,7 @@
                     <div class="post-image">
                         <input type="file" id="photo" name="photo" onchange="previewFile()">
                         <label for="photo">Upload Photo</label>
-                        <img id="preview" src="" height="200" alt="Image preview...">
+                        <img id="preview" src="" height="100" alt="Image preview...">
                     </div>
                     <div class="post-button">
                         <input type="submit" value="Post">
