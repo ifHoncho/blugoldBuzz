@@ -27,7 +27,7 @@ $sql = "CREATE TABLE userinfo (
 username VARCHAR(30) NOT NULL PRIMARY KEY,
 password VARCHAR(255) NOT NULL,
 email VARCHAR(50),
-userType VARCHAR(50)
+isClub boolean DEFAULT false
 )";
 
 if ($conn->query($sql) === TRUE) {
