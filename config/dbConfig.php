@@ -27,7 +27,7 @@ $sql = "CREATE TABLE userinfo (
 username VARCHAR(30) NOT NULL PRIMARY KEY,
 password VARCHAR(255) NOT NULL,
 email VARCHAR(50),
-userType VARCHAR(50)
+isClub boolean DEFAULT false
 )";
 
 if ($conn->query($sql) === TRUE) {
@@ -39,7 +39,6 @@ $sql = "CREATE TABLE post (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(30) NOT NULL,
     content TEXT,
-    photo VARCHAR(255),
     post_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
     
