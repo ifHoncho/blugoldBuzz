@@ -157,7 +157,37 @@
         footer {
             position: relative;
         }
-       
+
+        select#userType {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            box-shadow: 0px 0px 3px 1px #33333323;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            font-size: 16px;
+            color: #333;
+            appearance: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        /* Add custom arrow */
+        select#userType::after {
+            content: "\25BC";
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background-color: #ccc;
+            pointer-events: none;
+        }
+
+        /* Style the options */
+        select#userType option {
+            padding: 10px;
+        }
     </style>
 </head>
 
@@ -196,8 +226,8 @@
                             <label for="email">Email:</label>
                             <input type="email" id="email" name="email" required>
                             <select id="userType" name="userType" required>
-                                <option value="UW-Club">UW-Club</option>
-                                <option value="Student">Student</option>
+                                <option value="UW-Club">Student</option>
+                                <option value="Student">UW-Club</option>
                             </select>
                             <input type="submit" value="Register" class="btn">
                             <?php
