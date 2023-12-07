@@ -1,6 +1,5 @@
 
 <?php
-<<<<<<< HEAD
 function loadPosts() {
     $host = 'localhost'; // or your database host
     $db   = 'blugoldBuzz';
@@ -99,19 +98,17 @@ function loadPosts() {
 
 
 
-=======
 //IF USER LOGS IN, DISPLAY SUCCESS NOTIFICATION
-    session_start();
-    if (isset($_SESSION['login_success']) && $_SESSION['login_success']) {
-        echo '<header id="success-header" class="hidden">Login successful!</header>';
-    // Unset the variable so the message doesn't keep showing up on refresh
-        unset($_SESSION['login_success']);
-        header("Location: " . $_SERVER['REQUEST_URI']);
-    }
-    
-    $class = (!isset($_SESSION['user_logged_in']) || !$_SESSION['user_logged_in']) ? 'logged-out' : 'logged-in';
-    $_SESSION['class'] = $class;
->>>>>>> e4b729033686378da19657bf77a44018b94c92f7
+session_start();
+if (isset($_SESSION['login_success']) && $_SESSION['login_success']) {
+    echo '<header id="success-header" class="hidden">Login successful!</header>';
+// Unset the variable so the message doesn't keep showing up on refresh
+    unset($_SESSION['login_success']);
+    header("Location: " . $_SERVER['REQUEST_URI']);
+}
+
+$class = (!isset($_SESSION['user_logged_in']) || !$_SESSION['user_logged_in']) ? 'logged-out' : 'logged-in';
+$_SESSION['class'] = $class;
 ?>
 <!DOCTYPE html>
 <html lang="en">
