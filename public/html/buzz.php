@@ -420,7 +420,7 @@ $_SESSION['class'] = $class;
             if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in']) {
                 echo '
             <div class="post">
-                <form action="post.php" method="post" enctype="multipart/form-data">
+                <form action="post.php" method="post">
                     <div class="post-input">
                         <textarea id="content" name="content" placeholder="What\'s happening?"></textarea><br>
                     </div>

@@ -5,8 +5,6 @@
             die();
         }
         $email = $_POST['email'];
-
-        //clean the inputs
         $email = htmlspecialchars($email);
 
         $servername = "localhost";

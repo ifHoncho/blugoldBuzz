@@ -18,6 +18,63 @@
          .main-container {
             height: 70vh;
         }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+        }
+
+        .column {
+            float: left;
+            width: 100%;
+            padding: 15px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+        }
+
+        .container::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: grey;
+        }
+
+        .container {
+            padding: 20px 16px;
+        }
+
+        .container h2 {
+            font-size: 1.5em;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        @media (min-width: 600px) {
+            .column {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .column {
+                width: 33.33%;
+            }
+        }
     </style>
 </head>
 
@@ -31,6 +88,7 @@
                 <div class="menu">
                     <ul>
                         <li><a href="./index.php" class="active">Home</a></li>
+                        <li><a href="./buzz.php">Buzz</a>
                         <li><a href="./club.php">Club</a></li>
                         <li><a class="active-page" href="./about.html">About</a></li>
                         <li><a href="./accountSettings.html">Settings</a></li>
@@ -42,32 +100,40 @@
             </div>
         </div>
         <div class="main-container">
-            <div class="content">
-                <div class="item-wrap">
-                    <div class="item">
-                        Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Rem quisquam dolor eum? Beatae ex distinctio
-                        quibusdam iure reprehenderit iusto aliquam, ipsam
-                        dolorem, autem dolorum et unde totam! Beatae,
-                        consequatur eligendi.
+            <div class="about-section">
+                <h1>Founders</h1>
+                <p>Who we are and what we do.</p>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="#" alt="Logan" style="width:100%">
+                        <div class="container">
+                            <h2>Logan</h2>
+                            <p class="title">Co-Founder</p>
+                            <p>lorem ipsum ipsum lorem.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="item-wrap">
-                    <div class="item">
-                        Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Rem quisquam dolor eum? Beatae ex distinctio
-                        quibusdam iure reprehenderit iusto aliquam, ipsam
-                        dolorem, autem dolorum et unde totam! Beatae,
-                        consequatur eligendi.
+
+                <div class="column">
+                    <div class="card">
+                        <img src="#" alt="Kyden" style="width:100%">
+                        <div class="container">
+                            <h2>Kyden</h2>
+                            <p class="title">Co-Founder</p>
+                            <p>lorem ipsum ipsum lorem.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="item-wrap">
-                    <div class="item">
-                        Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Rem quisquam dolor eum? Beatae ex distinctio
-                        quibusdam iure reprehenderit iusto aliquam, ipsam
-                        dolorem, autem dolorum et unde totam! Beatae,
-                        consequatur eligendi.
+
+                <div class="column">
+                    <div class="card">
+                        <img src="#" alt="Jack" style="width:100%">
+                        <div class="container">
+                            <h2>Jack</h2>
+                            <p class="title">Co-Founder</p>
+                            <p>lorem ipsum ipsum lorem.</p>
+                        </div>
                     </div>
                 </div>
             </div>

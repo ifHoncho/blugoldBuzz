@@ -1,5 +1,10 @@
 <?php
-//SEND POST INFO TO THE DB
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    session_start();
+
+
     if (!isset($_SESSION['username'])) {
         die("You must be logged in to post.");
     }
@@ -16,19 +21,30 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
-    $title = $_POST['title'];
+    $username = $_SESSION['username'];
     $content = $_POST['content'];
-    $user = $_SESSION['username'];
 
-    $sql = "INSERT INTO post (username, title, content) VALUES (?, ?, ?)";
+    // Assuming you have a database connection $conn
+    $sql = "INSERT INTO post (username, content) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $user, $title, $content);
 
-    if ($stmt->execute()) {
-        echo "New post created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($stmt === false) {
+        die("Error preparing statement: " . $conn->error);
     }
+
+    $bindResult = $stmt->bind_param("ss", $username, $content);
+
+    if ($bindResult === false) {
+        die("Error binding parameters: " . $stmt->error);
+    }
+
+    $executeResult = $stmt->execute();
+
+    if ($executeResult === false) {
+        die("Error executing statement: " . $stmt->error);
+    }
+
+    header("Location: profile.php"); // Redirect back to the profile page
+    ?>
     $conn->close();
 ?>
