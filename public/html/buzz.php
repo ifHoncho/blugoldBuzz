@@ -369,7 +369,7 @@
         <?php 
             if (isset($_SESSION['message'])) {
                 echo $_SESSION['message'];
-                // Unset the message after displaying it
+                // Unsets the message after displaying it
             }
         ?></header>
         <div class="main-container <?php echo $class; ?>">
@@ -387,11 +387,6 @@
                 <form action="post.php" method="post" enctype="multipart/form-data">
                     <div class="post-input">
                         <textarea id="content" name="content" placeholder="What\'s happening?"></textarea><br>
-                    </div>
-                    <div class="post-image">
-                        <input type="file" id="photo" name="photo" onchange="previewFile()">
-                        <label for="photo">Upload Photo</label>
-                        <img id="preview" src="" width="200" height="100">
                     </div>
                     <div class="post-button">
                         <input type="submit" value="Post">

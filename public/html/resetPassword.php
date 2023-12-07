@@ -36,9 +36,10 @@
                 <div class="menu">
                     <ul>
                         <li><a href="./index.php" class="active">Home</a></li>
-                        <li><a href="./club.html">Club</a></li>
+                        <li><a href="./buzz.php">Buzz</a></li>
+                        <li><a href="./club.php">Club</a></li>
                         <li><a href="./accountSettings.html">Settings</a></li>
-                        <li><a class="active-page" href="./resetPassword.html">Reset Password</a></li>
+                        <li><a class="active-page" href="./resetPassword.php">Reset Password</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,10 +51,77 @@
             <div class="content">
                 <div class="item-wrap">
                     <div class="item">
-                        <form class="account-settings-form">
+                        <form method="POST" class="account-settings-form">
                             <h2>Reset Password</h2>
-                            <input type="password" id="password" name="password" placeholder="Current Password">
-                            <input type="password" id="new-password" name="new-password" placeholder="New Password">
+                            <input type="username" id="formUsername" name="formUsername" placeholder="Username">
+                            <input type="password" id="formPassword" name="formPassword" placeholder="Current Password">
+                            <input type="password" id="formNewPassword" name="formNewPassword" placeholder="New Password">
+                            <?php
+                                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                    session_start();
+                                    $loggedInUsername = $_SESSION['username'];
+                                    $formUsername = $_POST['formUsername'];
+                                    $formPassword = $_POST['formPassword'];
+                                    $formNewPassword = $_POST['formNewPassword'];
+                            
+                                    //clean the inputs
+                                    $loggedInUsername = htmlspecialchars($loggedInUsername);    
+                                    $formUsername = htmlspecialchars($formUsername);
+                                    $formPassword = htmlspecialchars($formPassword);
+                                    $formNewPassword = htmlspecialchars($formNewPassword);
+                                    $hashedPassword = password_hash($formNewPassword, PASSWORD_DEFAULT);
+                            
+                                    
+                                    if ($loggedInUsername !== $formUsername) {
+                                            echo '
+                                                <p style="COLOR: RED;">
+                                                    The provided username does not match the logged in user
+                                                </p>
+                                            ';
+                                    } else {
+                                        //check if the password matches the one in the database
+                                        $servername = "localhost";
+                                        $username = "root";
+                                        $password = "";
+                                        $dbname = "blugoldBuzz";
+                                    
+                                        // Create connection
+                                        $conn = new mysqli($servername, $username, $password, $dbname);
+                                    
+                                        // Check connection
+                                        if ($conn->connect_error) {
+                                            die("Connection failed: " . $conn->connect_error);
+                                        }
+                                    
+                                        $sql = "SELECT password FROM userinfo WHERE username = ?";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param("s", $formUsername);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        $row = $result->fetch_assoc();
+                                        $prevHashedPassword = $row['password'];
+                                    
+                                        if (password_verify($formPassword, $prevHashedPassword)) {
+                                            //update the password
+                                            $sql = "UPDATE userinfo SET password = ? WHERE username = ?";
+                                            $stmt = $conn->prepare($sql);
+                                            $stmt->bind_param("ss", $hashedPassword, $formUsername);
+                                            $stmt->execute();
+                                            echo '
+                                                <p style="COLOR: GREEN;">
+                                                    Password successfully updated
+                                                </p>
+                                            ';
+                                        } else {
+                                            echo '
+                                                <p style="COLOR: RED;">
+                                                    The provided password does not match the one in the database
+                                                </p>
+                                            ';
+                                        }
+                                    }
+                                }
+                            ?>
                             <button type="submit">Save Changes</button>
                         </form>
                     </div>
