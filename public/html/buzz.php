@@ -10,6 +10,7 @@
     }
     
     $class = (!isset($_SESSION['user_logged_in']) || !$_SESSION['user_logged_in']) ? 'logged-out' : 'logged-in';
+    $_SESSION['class'] = $class;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,8 +118,7 @@
             grid-row: 2 / 2;
             grid-column: 1 / 3;
             background: #fff;
-            max-height: 400px;
-            height: auto;
+            height: 200px;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             margin-left: 20px;
@@ -136,7 +136,7 @@
             width: 100%;
             padding: 10px;
             gap: 25px;
-        }
+        } 
         form > .post-input{
             grid-row: 1;
         }
@@ -159,35 +159,13 @@
             letter-spacing: .2em;
             background-color: #4F709C;
             color: #fff;
-            width: 100px;
+            width: 50px;
             text-align: center;
         }
         form > .post-button:hover {
             transition: .2s ease-out;
-            scale: 1.1 1.2;
-        }
-        form > .post-image{
-            text-align: center;
-            grid-row: 3;
-        }
-        form > .post-image input[type="file"] {
-            display: none;
-        }
-        form > .post-image label {
-            background-color: #4F709C;
-            color: #fff;
-            border-radius: 5px;
-            font-size: large;
-            font-weight: bold;
-            text-align: center;
-            padding: 10px 20px;
-        }
-        form > .post-image label:hover {
-            background-color: #3F609C;
-            transform: scale(1.05);
-            transition: .2s ease-in-out;
-            cursor: pointer;
-        }
+            transform: scale(.95);
+        } 
         .trending {
             grid-row: 2 / 2;
             grid-column: 6 / 8;
@@ -343,7 +321,8 @@
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><a class="active-page" href="./index.php" class="active">Home</a></li>
+                        <li><a href="./index.php" class="active">Home</a></li>
+                        <li><a class="active-page" href="./buzz.php">Buzz</a></li>
                         <li><a href="./club.php">Club</a></li>
                         
                         <?php
@@ -370,6 +349,7 @@
             if (isset($_SESSION['message'])) {
                 echo $_SESSION['message'];
                 // Unsets the message after displaying it
+                unset($_SESSION['message']);
             }
         ?></header>
         <div class="main-container <?php echo $class; ?>">

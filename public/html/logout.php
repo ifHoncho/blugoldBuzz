@@ -10,6 +10,6 @@ unset($_SESSION['user_logged_in']);
 $_SESSION['message'] = 'Logout successful!';
 
 // Redirect to homepage with a logout success message
-header("Location: index.php");
+header("Location: buzz.php");
 exit;
 ?>
