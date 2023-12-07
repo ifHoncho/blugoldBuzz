@@ -55,7 +55,7 @@ function loadPosts() {
                             $class = $_SESSION['class'] ?? 'logged-out';
                             if ($class === 'logged-in') {
                                 echo '
-                                <li><a href="./profile.html">Profile</a></li>
+                                <li><a href="./profile.php">Profile</a></li>
                                 <li><a href="./logout.php">Logout</a></li>
                                 <li><a href="./accountSettings.html">Account</a></li>
                                     ';
