@@ -65,11 +65,14 @@ function loadPosts() {
                 <div class="menu">
                     <ul>
                         <li><a href="./index.php" class="active">Home</a></li>
-                        <li><a href="./buzz.php">Buzz</a></li>
-                        <li> <a class="active-page" a href="./club.php">Club</a></li>
+                        <li><a class="active-page" href="./buzz.php">Buzz</a></li>
+                        <li><a href="./club.php">Club</a></li>
                         
                         <?php
                             session_start();
+                            $class = (!isset($_SESSION['user_logged_in']) || !$_SESSION['user_logged_in']) ? 'logged-out' : 'logged-in';
+                            $_SESSION['class'] = $class;
+
                             $class = $_SESSION['class'] ?? 'logged-out';
                             if ($class === 'logged-in') {
                                 echo '
