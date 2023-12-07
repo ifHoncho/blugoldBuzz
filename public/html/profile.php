@@ -29,11 +29,25 @@
                     <a href="./index.html">Blugold <span>Buzz</span></a>
                 </div>
                 <div class="menu">
-                    <ul>
+                <ul>
                         <li><a href="./index.html" class="active">Home</a></li>
-                        <li><a href="./club.html">Club</a></li>
-                        <li><a class="active-page" href="./profile.html" >Profile</a></li>
-                        <li><a href="./accountSettings.html">Settings</a></li>
+                        <li><a href="./buzz.php">Buzz</a></li>
+                        <li> <a class="active-page" a href="./club.php">Club</a></li>
+                        
+                        <?php
+                            session_start();
+                            $class = $_SESSION['class'] ?? 'logged-out';
+                            if ($class === 'logged-in') {
+                                echo '
+                                <li><a href="./profile.html">Profile</a></li>
+                                <li><a href="./logout.php">Logout</a></li>
+                                <li><a href="./accountSettings.html">Account</a></li>
+                                    ';
+                            } else {
+                                echo '<li><a href="./login.php">Login</a> </li>';
+                                echo '<li><a href="./register.php">Register</a> </li>';
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>
