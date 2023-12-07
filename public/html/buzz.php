@@ -155,16 +155,16 @@ $_SESSION['class'] = $class;
             grid-row: 1 / 1;
         }
         .post {
-            grid-row: 2 / 2;
             grid-column: 1 / 3;
             background: #fff;
             height: 200px;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             margin-left: 20px;
-            display: grid;
-            grid-template-rows: auto;
-            grid-template-columns: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .post form {
             display: grid;
@@ -277,32 +277,34 @@ $_SESSION['class'] = $class;
             z-index: -1;
         }
         .content {
-            overflow: auto;
             box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+            margin-left: 5px;
+            margin-right: 5px;
         }
-        .main-container.logged-out .content {
+        .main-container .content {
             grid-column: 1 / 5;
         }
 
-        .main-container.logged-out .trending {
+        .main-container .trending {
             grid-column: 5 / 8;
         }
 
         .main-container.logged-out .post {
             display: none;
         }
-    .recent {
-        padding-top: 20px;
-    }
-    .item-wrap, .item {
-        height: auto;
-    }        
+        .recent {
+            padding-top: 20px;
+        }       
     @media (max-width: 400px) {
         .main-container .post,
         .main-container .trending {
             display: none;
         }
-        .main-container.logged-in .content {
+        .main-container .content {
             grid-column: 1 / 8;
             display: block;
         }
@@ -313,49 +315,64 @@ $_SESSION['class'] = $class;
             display: contents;
         }
         .item-wrap, .item {
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
     }
     
     @media (min-width:400px) and (max-width: 728px) {
-        .main-container.logged-out .content {
-            grid-column: 1 / 8;
-        }
-        .main-container.logged-out .post {
+        <?php
+            if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in']) {
+                echo '
+                .main-container {
+                    grid-template-rows: 100px 1fr auto;
+                    grid-template-columns: repeat(7,1fr);
+                    gap: 15px;
+                    padding-left:0;
+                    padding-right:0;
+                    padding-top:0;
+                }
+                .main-container .post {
+                    display: contents;
+                    grid-column: 3 / 6;
+                    grid-rows: 1 / 1;
+                }
+
+                .main-container .trending {
+                    display: none;
+                }
+                .main-container .content {
+                    grid-column: 1 / 8;
+                    grid-row: 3 / 4;
+                }
+                
+                ';
+            } else {
+                echo '
+                .main-container .post {
+                    display: none;
+                }
+
+                .main-container .content {
+                    grid-column: 1 / 8;
+                }
+                
+                ';
+            }
+        ?>
+
+        .main-container .trending {
             display: none;
         }
-        .main-container.logged-in .content {
-            grid-column: 1 / 8;
-        }
-        .main-container.logged-in .post {
-            display: none;
-        }
-        .main-container.logged-in .trending {
-            display: none;
-        }
+
         .main-container .heading h3.large {
             display: none;
         }
+
         .main-container .heading h3.small {
             display: contents;
         }
-        .feed .post {
-        display: flex;
-        align-items: center;
-        background-color: #fff;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
 
-    .feed .post img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 15px;
-    }
     }
     @media (min-width: 728px) {
         .trending h4 {
@@ -401,13 +418,13 @@ $_SESSION['class'] = $class;
             </div>
         </div>
         <header class="hidden" id="success-header">
-        <?php 
-            if (isset($_SESSION['message'])) {
-                echo $_SESSION['message'];
-                // Unsets the message after displaying it
-                unset($_SESSION['message']);
-            }
-        ?></header>
+            <?php 
+                if (isset($_SESSION['message'])) {
+                    echo $_SESSION['message'];
+                    unset($_SESSION['message']);
+                }
+            ?>
+        </header>
         <div class="main-container <?php echo $class; ?>">
             <div class="heading">
                 <div class="recent">
@@ -451,9 +468,6 @@ $_SESSION['class'] = $class;
             </div>
             
             <div class="content">
-                <?php
-                loadPosts();
-                ?>
                 <div class="item-wrap">
                     <div class="item">
                         Lorem ipsum dolor sit amet consectetur adipisicing 
@@ -514,7 +528,6 @@ $_SESSION['class'] = $class;
         if (header && header.textContent.trim() !== '') {
             header.classList.remove('hidden');
 
-            // After 2 seconds, add the 'hidden' class back to the header
             setTimeout(function() {
                 header.classList.add('hidden');
             }, 2000);
@@ -528,23 +541,6 @@ $_SESSION['class'] = $class;
             inputBox.style.display = 'none';
         }
     });
-
-    function previewFile() {
-    const preview = document.querySelector('#preview');
-    preview.style.visibility = 'hidden';
-    const file = document.querySelector('input[type=file]').files[0];
-    const reader = new FileReader();
-
-    reader.addEventListener("load", function () {
-        // convert image file to base64 string
-        preview.src = reader.result;
-        preview.style.visibility = 'visible';
-    }, false);
-
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-}
 </script>
 </body>
 </html>
