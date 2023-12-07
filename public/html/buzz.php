@@ -1,16 +1,114 @@
 
 <?php
-//IF USER LOGS IN, DISPLAY SUCCESS NOTIFICATION
-    session_start();
-    if (isset($_SESSION['login_success']) && $_SESSION['login_success']) {
-        echo '<header id="success-header" class="hidden">Login successful!</header>';
-    // Unset the variable so the message doesn't keep showing up on refresh
-        unset($_SESSION['login_success']);
-        header("Location: " . $_SERVER['REQUEST_URI']);
+function loadPosts() {
+    $host = 'localhost'; // or your database host
+    $db   = 'blugoldBuzz';
+    $user = 'root';
+    $pass = '';
+    $charset = 'utf8mb4';
+
+    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+    $options = [
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES   => false,
+    ];
+
+    try {
+        $pdo = new PDO($dsn, $user, $pass, $options);
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
+
+    // SQL to count the number of rows in a table
+    $sql = "SELECT COUNT(*) FROM post";
+
+    try {
+        // Executing the query
+        $stmt = $pdo->query($sql);
+
+        // Fetching the result
+        $count = $stmt->fetchColumn();
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
+
+
+
+
+    $host = 'localhost';
+    $user = 'root';
+    $pass = '';
+    $db = 'blugoldbuzz';
+
+    $conn = new mysqli($host, $user, $pass, $db);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $table = 'post'; // replace with your table name
+    $column1 = 'username'; // replace with your column name
+    $column2 = 'content'; // replace with your column name
+
     
-    $class = (!isset($_SESSION['user_logged_in']) || !$_SESSION['user_logged_in']) ? 'logged-out' : 'logged-in';
-    $_SESSION['class'] = $class;
+
+    
+
+    for($i=1; $i<$count+1; $i++){
+        
+
+        $sql = "SELECT $column1 FROM $table WHERE ID = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $count); // "i" is for integer. Use "s" for string, etc.
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($item1 = $result->fetch_assoc()) {
+            
+        } else {
+            echo "No record found.";
+        }
+
+
+        $sql = "SELECT $column2 FROM $table WHERE ID = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $count); // "i" is for integer. Use "s" for string, etc.
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($item2 = $result->fetch_assoc()) {
+            
+        } else {
+            echo "No record found.";
+        }
+
+        echo $item1[0];
+
+        echo "<div class='post'>";
+        echo "<img src='../../assets/images/cleveland.png' alt='User Name'>";
+        echo "<div><h3>h</h3>";
+        echo "<p>h</p></div>";
+        echo "</div>";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+
+
+
+//IF USER LOGS IN, DISPLAY SUCCESS NOTIFICATION
+session_start();
+if (isset($_SESSION['login_success']) && $_SESSION['login_success']) {
+    echo '<header id="success-header" class="hidden">Login successful!</header>';
+// Unset the variable so the message doesn't keep showing up on refresh
+    unset($_SESSION['login_success']);
+    header("Location: " . $_SERVER['REQUEST_URI']);
+}
+
+$class = (!isset($_SESSION['user_logged_in']) || !$_SESSION['user_logged_in']) ? 'logged-out' : 'logged-in';
+$_SESSION['class'] = $class;
 ?>
 <!DOCTYPE html>
 <html lang="en">
