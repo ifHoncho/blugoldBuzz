@@ -12,12 +12,10 @@
 9) about; description of the website
 10) contact; offers a way to get in touch with the developers
 
-### To Do
-- Integrate new homepage (fix links, header, footer)
-- Fix menu links
-- fix footers
-- fix css & image links (if any have been missed)
+### To Do/Issues
+- all posts are appearing on club page
+- menu highlight on buzz page (highlights club)
+- fix footers (should fit to screen size), make them smaller
 - change accountSettings.html -> accountSettings.php
-- profile.html
-- change resetPassword -> resetPassword.php
+
 - presentation
