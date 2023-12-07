@@ -42,11 +42,11 @@ function loadPosts() {
         <div class="navbar">
             <div class="inner-navbar">
                 <div class="logo">
-                    <a href="./index.php">Blugold <span>Buzz</span></a>
+                    <a href="./index.html">Blugold <span>Buzz</span></a>
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><a href="./index.php" class="active">Home</a></li>
+                        <li><a href="./index.html" class="active">Home</a></li>
                         <li><a href="./buzz.php">Buzz</a></li>
                         <li> <a class="active-page" a href="./club.php">Club</a></li>
                         
