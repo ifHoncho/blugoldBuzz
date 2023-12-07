@@ -16,19 +16,28 @@
          <div class="navbar">
             <div class="inner-navbar">
                 <div class="logo">
-                    <a href="./index.html">Blugold <span>Buzz</span></a>
+                    <a href="./index.php">Blugold <span>Buzz</span></a>
                 </div>
             </div>
         </div>
         <div class="central-menu">
-            <ul>
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="buzz.php">View The Buzz</a></li>
-                <li><a href="club.php">Club Activity</a></li>
-                <li><a href="login.php">Log In/Register</a></li>
-                <li><a href="about.html">About Us</a></li>
-
-            </ul>
+        <ul>
+            <li><a href="./index.php" class="active">Home</a></li>
+            <li><a href="./buzz.php">View The Buzz</a></li>
+            <li> <a href="./club.php">Club Activity</a></li>
+            
+            <?php
+                session_start();
+                $class = $_SESSION['class'] ?? 'logged-out';
+                if ($class === 'logged-in') {
+                    echo '
+                    <li><a href="./logout.php">Logout</a></li>
+                        ';
+                } else {
+                    echo '<li><a href="./login.php">Log In/Register</a> </li>';
+                }
+            ?>
+        </ul>
         </div>
         <footer>
             <p>© 2023 Blugold Buzz. All rights reserved.</p>
