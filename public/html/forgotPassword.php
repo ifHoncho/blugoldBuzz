@@ -1,3 +1,64 @@
+<?php //we do not have a mail server, but this is how we can implement it
+    /*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if(empty($_POST['email']) && empty($_POST['password']))
+        {
+            die();
+        }
+        $email = $_POST['email'];
+
+        //clean the inputs
+        $email = htmlspecialchars($email);
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "blugoldBuzz";
+    
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+    
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $sql = $conn->prepare("SELECT password FROM userinfo WHERE email = ?");
+        if ($sql === false) {
+            die('Invalid query: ' . $conn->error);
+        }
+        
+        $bind_result = $sql->bind_param("s", $email);
+        if ($bind_result === false) {
+            die('Failed to bind email: ' . $sql->error);
+        }
+        
+        $execute_result = $sql->execute();
+        if ($execute_result === false) {
+            die('Failed to execute query: ' . $sql->error);
+        }
+        
+        $result = $sql->get_result();
+        $row = $result->fetch_assoc();
+        
+        if ($row === null) {
+            die('No user with such email found');
+        }
+        
+        $password = $row['password'];
+        
+        $to = $email;
+        $subject = "Blugold Buzz Password";
+        $txt = "Your password is: ".$password;
+        $headers = "From: Blugold Buzz";
+        
+        $mail_result = mail($to,$subject,$txt,$headers);
+        if ($mail_result === false) {
+            die('Failed to send email');
+        }
+
+        $conn->close();
+    } */
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +99,7 @@
                         <li><a href="./index.php" class="active">Home</a></li>
                         <li><a href="./club.html">Club</a></li>
                         <li><a href="./accountSettings.html">Settings</a></li>
-                        <li><a class="active-page" href="./resetPassword.html">Reset Password</a></li>
+                        <li><a class="active-page" href="./forgotPassword.php">Reset Password</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,11 +111,10 @@
             <div class="content">
                 <div class="item-wrap">
                     <div class="item">
-                        <form class="account-settings-form">
-                            <h2>Reset Password</h2>
-                            <input type="password" id="password" name="password" placeholder="Current Password">
-                            <input type="password" id="new-password" name="new-password" placeholder="New Password">
-                            <button type="submit">Save Changes</button>
+                        <form method="POST" class="account-settings-form">
+                            <h2>Get Password</h2>
+                            <input type="email" id="email" name="email" placeholder="Enter Email..." required>
+                            <button type="submit">Send Email</button>
                         </form>
                     </div>
                 </div>

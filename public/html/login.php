@@ -36,7 +36,7 @@
         
             //redirect the browser
             $_SESSION['message'] = 'Login successful!';
-            header("Location: index.php");
+            header("Location: buzz.php");
             exit();
         }
     }
@@ -142,6 +142,7 @@
                 <div class="menu">
                     <ul>
                         <li><a href="./index.php" class="active">Home</a></li>
+                        <li><a href="./buzz.php">Buzz</a></li>
                         <li><a href="./club.php">Club</a></li>
                         <li><a class="active-page"  href="./login.php">Login</a> </li>
                         <li><a href="./accountSettings.html">Settings</a></li>
@@ -166,6 +167,7 @@
                                 <input type="submit" value="Login" class="btn">
                                 <p>Don't have an account?</p>
                                 <button><a href="./register.php" class="btn">Create Account</a></button>
+                                <button><a href="./forgotPassword.php" class="btn">Forgot Password?</a></button>
                             </form>
                     </div>
                 </div>
