@@ -1,40 +1,5 @@
-
 <?php
 function loadPosts() {
-    $host = 'localhost'; // or your database host
-    $db   = 'blugoldBuzz';
-    $user = 'root';
-    $pass = '';
-    $charset = 'utf8mb4';
-
-    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-    $options = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ];
-
-    try {
-        $pdo = new PDO($dsn, $user, $pass, $options);
-    } catch (\PDOException $e) {
-        throw new \PDOException($e->getMessage(), (int)$e->getCode());
-    }
-
-    // SQL to count the number of rows in a table
-    $sql = "SELECT COUNT(*) FROM post";
-
-    try {
-        // Executing the query
-        $stmt = $pdo->query($sql);
-
-        // Fetching the result
-        $count = $stmt->fetchColumn();
-    } catch (\PDOException $e) {
-        throw new \PDOException($e->getMessage(), (int)$e->getCode());
-    }
-
-
-
 
     $host = 'localhost';
     $user = 'root';
@@ -47,54 +12,31 @@ function loadPosts() {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $table = 'post'; // replace with your table name
-    $column1 = 'username'; // replace with your column name
-    $column2 = 'content'; // replace with your column name
+    $column1 = 'username'; // Replace with your first column name
+    $column2 = 'content'; // Replace with your second column name
+    $table = 'post'; // Replace with your table name
+    $sql = "SELECT $column1, $column2 FROM $table";
 
-    
+    // Execute the query
+    $result = $conn->query($sql);
 
-    
-
-    for($i=1; $i<$count+1; $i++){
-        
-
-        $sql = "SELECT $column1 FROM $table WHERE ID = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $count); // "i" is for integer. Use "s" for string, etc.
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($item1 = $result->fetch_assoc()) {
-            
-        } else {
-            echo "No record found.";
+    if ($result) {
+        // Iterate through each row and echo the values
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='post'>";
+            echo "<img src='../../assets/images/cleveland.png' alt='User Name'>";
+            echo "<div><h3>" . $row[$column1] . "</h3>";
+            echo "<p>" . $row[$column2] . "</p></div>";
+            echo "</div>";
         }
 
-
-        $sql = "SELECT $column2 FROM $table WHERE ID = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $count); // "i" is for integer. Use "s" for string, etc.
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($item2 = $result->fetch_assoc()) {
-            
-        } else {
-            echo "No record found.";
-        }
-
-        echo $item1[0];
-
-        echo "<div class='post'>";
-        echo "<img src='../../assets/images/cleveland.png' alt='User Name'>";
-        echo "<div><h3>h</h3>";
-        echo "<p>h</p></div>";
-        echo "</div>";
+        // Free result set
+        $result->free();
+    } else {
+        echo "Error: " . $conn->error;
     }
-
-    $stmt->close();
-    $conn->close();
 }
+
 
 
 
@@ -398,6 +340,22 @@ $_SESSION['class'] = $class;
         .main-container .heading h3.small {
             display: contents;
         }
+        .feed .post {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .feed .post img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
     }
     @media (min-width: 728px) {
         .trending h4 {
@@ -491,14 +449,11 @@ $_SESSION['class'] = $class;
 
                 </div>
             </div>
+            
             <div class="content">
-                <div class="item-wrap">
-                    <div class="item">
-                        Lorem ipsum dolor sit amet consectetur adipisicing 
-                        elit. Rem quisquam dolor eum? Beatae ex distinctio 
-                        quibusdam iure reprehenderit iusto aliquam.
-                    </div> 
-                </div>
+                <?php
+                loadPosts();
+                ?>
                 <div class="item-wrap">
                     <div class="item">
                         Lorem ipsum dolor sit amet consectetur adipisicing 

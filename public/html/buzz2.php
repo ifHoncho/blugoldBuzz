@@ -12,19 +12,16 @@ function loadPosts() {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $column1 = 'username';
-    $column2 = 'content';
-    $table1 = 'post';
-    $table2 = 'userinfo';
-    $sql = "SELECT t1.$column1, t1.$column2 
-    FROM $table1 t1
-    JOIN $table2 t2 ON t1.$column1 = t2.$column1
-    WHERE t2.userType = 'UW-Club'";
+    $column1 = 'username'; // Replace with your first column name
+    $column2 = 'content'; // Replace with your second column name
+    $table = 'post'; // Replace with your table name
+    $sql = "SELECT $column1, $column2 FROM $table";
 
     // Execute the query
     $result = $conn->query($sql);
 
     if ($result) {
+        
         // Iterate through each row and echo the values
         while ($row = $result->fetch_assoc()) {
             echo "<div class='post'>";
@@ -111,7 +108,7 @@ function loadPosts() {
                 <div class="feed">
                     <?php 
                     loadPosts(); ?>
-                    <!-- Example post 
+                    <!-- Example post -->
                     <div class="post">
                         <img src="../../assets/images/peter.jpg" alt="User Name">
                         <div>
@@ -119,7 +116,16 @@ function loadPosts() {
                             <p>Buzz test</p>
                         </div>
                     </div>
-                    -->
+
+                    <div class="post">
+                        <img src="../../assets/images/cleveland.png" alt="User Name">
+                        <div>
+                            <h3>Cleveland Brown</h3>
+                            <p>Hello</p>
+                        </div>
+                    </div>
+                    <!-- More posts would be listed here -->
+
                 </div>
             </div>
         </div>
