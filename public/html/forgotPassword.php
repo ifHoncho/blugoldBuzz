@@ -99,7 +99,7 @@
                         <li><a href="./index.php" class="active">Home</a></li>
                         <li><a href="./club.html">Club</a></li>
                         <li><a href="./accountSettings.html">Settings</a></li>
-                        <li><a class="active-page" href="./resetPassword.html">Reset Password</a></li>
+                        <li><a class="active-page" href="./forgotPassword.php">Reset Password</a></li>
                     </ul>
                 </div>
             </div>

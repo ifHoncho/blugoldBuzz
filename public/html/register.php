@@ -171,9 +171,9 @@
                 <div class="menu">
                     <ul>
                         <li><a href="./index.php" class="active">Home</a></li>
+                        <li><a href="./buzz.php">Buzz</a></li>
                         <li><a href="./club.html">Club</a></li>
                         <li><a class="active-page"  href="./register.php">Register</a> </li>
-                        <li><a href="./accountSettings.html">Settings</a></li>
                     </ul>
                 </div>
             </div>
