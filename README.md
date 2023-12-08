@@ -18,5 +18,7 @@
 - Create demo accounts and posts in the initialization script
 - fix contact us link
 - update reame with anything else you can thinkk of
+- put account type next to username on the post
+- get buzz and club working
 
 - create presentation
