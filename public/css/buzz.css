@@ -95,13 +95,6 @@ button:hover {
     margin-right: 15px;
 }
 
-/* Footer and Navbar Styles */
-
-
-.navbar {
-    position: relative;
-}
-
 /* Responsive Design Adjustments */
 @media (max-width: 728px) {
     .pcontainer {

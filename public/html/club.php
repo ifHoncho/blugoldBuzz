@@ -92,14 +92,6 @@ function loadPosts() {
                 <i class="fas fa-bars"></i>
             </div>
         </div>
-        <script>
-            var dropDown = document.querySelector(".dropdown");
-            var menu = document.querySelector(".menu");
-
-            dropDown.addEventListener("click", function () {
-                menu.classList.toggle("active");
-            })
-        </script>
         <div class="pcontainer">
             <div class="pmain">
                 <section class="post-box">
