@@ -12,26 +12,22 @@ function loadPosts() {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $column1 = 'username'; // Replace with your first column name
-    $column2 = 'content'; // Replace with your second column name
-    $table = 'post'; // Replace with your table name
+    $column1 = 'username'; 
+    $column2 = 'content'; 
+    $table = 'post'; 
     $sql = "SELECT $column1, $column2 FROM $table";
 
-    // Execute the query
     $result = $conn->query($sql);
 
     if ($result) {
-        
-        // Iterate through each row and echo the values
         while ($row = $result->fetch_assoc()) {
             echo "<div class='post'>";
-            echo "<img src='../../assets/images/cleveland.png' alt='User Name'>";
+            echo "<img src='../../assets/images/defaultProfile.jpg' alt='User Name'>";
             echo "<div><h3>" . $row[$column1] . "</h3>";
             echo "<p>" . $row[$column2] . "</p></div>";
             echo "</div>";
         }
 
-        // Free result set
         $result->free();
     } else {
         echo "Error: " . $conn->error;
@@ -103,7 +99,7 @@ function loadPosts() {
                 <div class="feed">
                     <?php 
                     loadPosts(); ?>
-                    <!-- Example post -->
+                    <!-- Example post 
                     <div class="post">
                         <img src="../../assets/images/peter.jpg" alt="User Name">
                         <div>
@@ -111,16 +107,7 @@ function loadPosts() {
                             <p>Buzz test</p>
                         </div>
                     </div>
-
-                    <div class="post">
-                        <img src="../../assets/images/cleveland.png" alt="User Name">
-                        <div>
-                            <h3>Cleveland Brown</h3>
-                            <p>Hello</p>
-                        </div>
-                    </div>
-                    <!-- More posts would be listed here -->
-
+                    -->
                 </div>
             </div>
         </div>
