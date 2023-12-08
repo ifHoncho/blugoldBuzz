@@ -145,7 +145,7 @@
                         <li><a href="./buzz.php">Buzz</a></li>
                         <li><a href="./club.php">Club</a></li>
                         <li><a class="active-page"  href="./login.php">Login</a> </li>
-                        <li><a href="./accountSettings.php">Settings</a></li>
+                        <li><a href="./register.php">Register</a> </li>
                     </ul>
                 </div>
             </div>

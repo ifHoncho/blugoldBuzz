@@ -1,19 +1,17 @@
 <?php
 session_start();
 
-
-
 $postsPerPage = 10;
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $offset = ($page - 1) * $postsPerPage;
 
 // Create connection
 $servername = 'localhost';
-$username = 'root';
-$password = '';
+$dbusername = 'root';
+$dbpassword = '';
 $dbname = 'blugoldbuzz';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
@@ -57,6 +55,14 @@ $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 $totalPages = ceil($row['count'] / $postsPerPage);
+
+// Gets user info
+$sql = "SELECT userType FROM userinfo WHERE username = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result2 = $stmt->get_result();
+$userType = $result2->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -241,6 +247,12 @@ $totalPages = ceil($row['count'] / $postsPerPage);
         .modal-content button:hover, .modal-content a:hover {
             background-color: #d32f2f;
         }
+
+        .profile h2 {
+            text-align: center;
+            color: #333;
+        }
+
         @media screen and (max-width: 600px) {
             .modal-content {
                 width: 90%; /* Adjust this value as needed */
@@ -274,7 +286,8 @@ $totalPages = ceil($row['count'] / $postsPerPage);
         </div>
         <div class="main-container">
             <div class="profile">
-                <h1>Welcome, <span> <?php echo $username; ?> </span></h1>
+                <h1>Welcome, <span> <?php echo $username; ?> </span></h1><br>
+                <h2><?php echo $userType['userType']; ?></h2>
             </div>
             <div class="profile">
                 <div id="deleteModal" class="modal">
@@ -285,7 +298,7 @@ $totalPages = ceil($row['count'] / $postsPerPage);
                         <button onclick="closeModal()">Cancel</button>
                     </div>
                 </div>
-                <h2>Your Posts: </h2>
+                <h2>Your Posts: </h2><br>
                 <div class="posts">
                     <?php foreach($posts as $post): ?>
                         <div class="post">
