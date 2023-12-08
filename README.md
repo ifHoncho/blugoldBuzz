@@ -13,8 +13,9 @@
 10) contact; offers a way to get in touch with the developers
 
 ### To Do/Issues
-- all posts are appearing on club page
-- menu highlight on buzz page (highlights club)
-- fix footers (should fit to screen size), make them smaller
 
-- presentation
+- fix footers (should fit to screen size), make them smaller
+- Create demo accounts and posts in the initialization script
+- fix contact us link
+
+- create presentation
