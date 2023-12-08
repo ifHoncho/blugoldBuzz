@@ -226,8 +226,8 @@
                             <label for="email">Email:</label>
                             <input type="email" id="email" name="email" required>
                             <select id="userType" name="userType" required>
-                                <option value="UW-Club">Student</option>
-                                <option value="Student">UW-Club</option>
+                                <option value="Student">Student</option>
+                                <option value="UW-Club">UW-Club</option>
                             </select>
                             <input type="submit" value="Register" class="btn">
                             <?php
