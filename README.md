@@ -16,6 +16,5 @@
 - all posts are appearing on club page
 - menu highlight on buzz page (highlights club)
 - fix footers (should fit to screen size), make them smaller
-- change accountSettings.html -> accountSettings.php
 
 - presentation
