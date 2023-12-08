@@ -98,7 +98,7 @@ function loadPosts() {
                     <textarea placeholder="What's happening?"></textarea>
                     <button>Post</button>
                 </section>
-
+                
 
                 <div class="feed">
                     <?php 
