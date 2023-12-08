@@ -24,6 +24,7 @@ body {
     padding: 20px;
     max-width: 800px; /* Adjusted width */
     margin: 20px auto;
+    margin-top: 60px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -98,6 +99,7 @@ button:hover {
 /* Responsive Design Adjustments */
 @media (max-width: 728px) {
     .pcontainer {
+        margin-top:100px;
         width: 90%;
         max-width: 400px;
     }

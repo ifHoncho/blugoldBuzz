@@ -93,6 +93,7 @@ button:hover {
 /* Responsive Design Adjustments */
 @media (max-width: 728px) {
     .pcontainer {
+        margin-top: 100px;
         width: 90%;
         max-width: 400px;
     }
