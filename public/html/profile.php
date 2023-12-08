@@ -264,7 +264,7 @@ $totalPages = ceil($row['count'] / $postsPerPage);
                         <li> <a href="./club.php">Club</a></li>
                         <li><a  class="active-page" href="./profile.php">Profile</a></li>
                         <li><a href="./logout.php">Logout</a></li>
-                        <li><a href="./accountSettings.html">Account</a></li>
+                        <li><a href="./accountSettings.php">Account</a></li>
                     </ul>
                 </div>
             </div>

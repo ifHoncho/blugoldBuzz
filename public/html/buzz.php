@@ -74,7 +74,7 @@ function loadPosts() {
                                 echo '
                                 <li><a href="./profile.php">Profile</a></li>
                                 <li><a href="./logout.php">Logout</a></li>
-                                <li><a href="./accountSettings.html">Account</a></li>
+                                <li><a href="./accountSettings.php">Account</a></li>
                                     ';
                             } else {
                                 echo '<li><a href="./login.php">Login</a> </li>';
