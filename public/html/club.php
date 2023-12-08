@@ -28,7 +28,7 @@ function loadPosts() {
         // Iterate through each row and echo the values
         while ($row = $result->fetch_assoc()) {
             echo "<div class='post'>";
-            echo "<img src='../../assets/images/cleveland.png' alt='User Name'>";
+            echo "<img src='../../assets/images/defaultProfile.jpg' alt='User Name'>";
             echo "<div><h3>" . $row[$column1] . "</h3>";
             echo "<p>" . $row[$column2] . "</p></div>";
             echo "</div>";
