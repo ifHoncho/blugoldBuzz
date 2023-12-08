@@ -19,6 +19,6 @@
 - fix contact us link
 - update reame with anything else you can thinkk of
 - put account type next to username on the post
-- get buzz and club working
+- get buzz and club working (post function)
 
 - create presentation
