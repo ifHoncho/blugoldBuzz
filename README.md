@@ -17,5 +17,6 @@
 - fix footers (should fit to screen size), make them smaller
 - Create demo accounts and posts in the initialization script
 - fix contact us link
+- update reame with anything else you can thinkk of
 
 - create presentation
